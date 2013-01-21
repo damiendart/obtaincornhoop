@@ -1,0 +1,40 @@
+@import "mixins";
+@import "variables";
+
+@font-face {
+  $font-basename: "glyphiconshalflings-regular";
+  font-family: "Glyphicons Halflings";
+  src: url("#{$asset-folder}#{$font-basename}.eot");
+  src: url("#{$asset-folder}#{$font-basename}.eot?#iefix")
+      format("embedded-opentype");
+  src: url("#{$asset-folder}#{$font-basename}.woff") format("woff");
+  src: url("#{$asset-folder}#{$font-basename}.ttf") format("truetype");
+  src: url("#{$asset-folder}#{$font-basename}.svg#glyphicons_halflingsregular")
+      format("svg"); }
+
+article, hgroup, nav, section {
+  // Let older browsers in on the HTML5 fun. For more information, see
+  // <https://github.com/aFarkas/html5shiv#html5shivjs> and
+  // <https://github.com/necolas/normalize.css/blob/master/normalize.css#L11>.
+  display: block; }
+
+body {
+  background: $page-background-colour;
+  color: $page-foreground-colour;
+  // I think setting the font-size initially to 100% fixes some IE bug?
+  font: 100%/#{$base-line-height} $base-font-stack;
+  @if ($base-font-size != 100%) {
+    font-size: $base-font-size; }
+  -webkit-font-smoothing: antialiasing;
+  margin: 0 0 ($base-line-height * 2) 0;
+  text-align: center;
+  // Prevent text funkiness when changing orientation on iOS devices.
+  -webkit-text-size-adjust: 100%;
+  @media screen and (max-width: 768px) {
+    font-size: 87.5%; // In most browsers: 0.875 * 16px = 14px
+    margin: 0 0 ($base-line-height / 2) 0; } }
+
+iframe, img {
+  border-style: none; // Remove border on linked images.
+  display: block;
+  max-width: 100%; }

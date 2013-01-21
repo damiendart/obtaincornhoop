@@ -1,0 +1,13 @@
+// Produces rules for links where when a user hovers over a link, the
+// background and foreground colours are swapped. At the moment, links that
+// have already been visited are not differentiated.
+@mixin colour-swap-links($background-colour, $foreground-colour) {
+  background: $background-colour;
+  color: $foreground-colour;
+  &:active, &:focus, &:hover, &:visited:hover {
+    background: $foreground-colour;
+    color: $background-colour; }
+  &:visited {
+    // TODO: Make visited links a little different from other links?
+    background: $background-colour;
+    color: $foreground-colour; } }

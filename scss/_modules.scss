@@ -1,0 +1,103 @@
+@import "mixins";
+@import "variables";
+
+.post-metadata {
+  color: $post-metadata-foreground-colour;
+  .metadata-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    [class*="metadata"] {
+      font-style: italic;
+      margin: 0 0 0 $base-line-height;
+      text-indent: $base-line-height * -1;
+      &:before {
+        float: left;
+        font-family: "Glyphicons Halflings";
+        font-size: $base-font-size * 0.75;
+        height: $base-line-height / 0.75;
+        // Tweak line-height so icons glyphs align better with adjacent text.
+        // TODO: Test with non-iOS mobile browsers.
+        line-height: ($base-line-height / 0.75) * 1.2;
+        speak: none;
+        width: $base-line-height / 0.75; } }
+    .metadata-date:before {
+      content: "\e023"; }
+    .metadata-notes:before {
+      content: "\e005"; }
+    .metadata-source:before {
+      content: "\e087"; }
+    .metadata-tags {
+      &:before {
+        content: "\e042"; }
+      .tag-list {
+        display: inline;
+        padding: 0;
+        .tag {
+          display: inline;
+          &:not(:last-child):after {
+            content: ", "; } } } } }
+  a {
+    @include colour-swap-links($post-background-colour,
+        $post-metadata-foreground-colour); } }
+
+.tumblr-notes {
+  color: $post-metadata-foreground-colour;
+  .notes {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    .note {
+      margin: 0 0 0 $base-line-height;
+      blockquote {
+        display: inline;
+        margin: 0; }
+      .action {
+        margin: 0 0 0 ($base-line-height * -1); }
+      // TODO: Check if this works as intended in older browsers.
+      .avatar_frame {
+        float: left;
+        height: $base-line-height;
+        left: $base-line-height * -1;
+        position: relative;
+        opacity: 0.25; // Poor man's grey tint.
+        width: $base-line-height;
+        .avatar {
+          margin: -8px 0 0 0; // Assuming avatar images are 16 by 16.
+          position: relative;
+          top: 50%; } }
+      .clear {
+        display: none; } } }
+  a {
+    @include colour-swap-links($post-background-colour,
+        $post-metadata-foreground-colour); } }
+
+.post-body {
+  color: $post-foreground-colour;
+  text-align: left;
+  a {
+    @include colour-swap-links($post-background-colour,
+        $post-foreground-colour); }
+  blockquote {
+    margin: ($base-line-height / 2) 0 0 0;
+    padding: 0 0 0 $base-line-height; }
+  h1 {
+    font-size: 150%;
+    line-height: ($base-line-height / 1.5);
+    margin: 0 0 ($base-line-height / 1.5) 0; }
+  p {
+    margin: ($base-line-height / 2) 0 0 0;
+    &.quote-attribution {
+      text-align: right;
+      font-style: italic; }
+    &:first-child {
+      margin: 0; } }
+  ol, ul {
+    list-style: square;
+    margin: ($base-line-height / 2) 0 0 $base-line-height;
+    padding: 0;
+    & > * {
+      margin: 0;
+      padding: 0; } } }
