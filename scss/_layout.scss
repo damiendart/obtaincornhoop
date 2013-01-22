@@ -36,3 +36,11 @@
     margin: ($base-line-height / 2) ($base-line-height / 2)
         0 ($base-line-height / 2);
     max-width: 100%; } }
+
+.post-navigation {
+  margin: $base-line-height auto 0 auto;
+  max-width: 34.25em; // In most browsers: 34.25 * 16px = 548px
+  @media screen and (max-width: 768px) {
+    margin: ($base-line-height / 2) ($base-line-height / 2)
+        0 ($base-line-height / 2);
+    max-width: 100%; } }

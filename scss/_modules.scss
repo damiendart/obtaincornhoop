@@ -5,6 +5,31 @@
 @import "mixins";
 @import "variables";
 
+.pager-navigation {
+  .pager {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    &:after {
+      clear: both;
+      content: "";
+      display: table; }
+    [class$="link"] {
+      display: inline-block;
+      .button {
+        @include colour-swap-links($post-background-colour,
+            $post-foreground-colour);
+        border-radius: $base-line-height;
+        display: inline-block;
+        font-weight: bold;
+        margin: 0;
+        padding: ($base-line-height / 2) $base-line-height; } }
+        text-transform: uppercase;
+    .previous-link {
+      float: left; }
+    .next-link {
+      float: right; } } }
+
 .post-metadata {
   color: $post-metadata-foreground-colour;
   .metadata-list {

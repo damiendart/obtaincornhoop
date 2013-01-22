@@ -81,9 +81,10 @@
     %article.post
       %p Nothing :(
   %tumblrblockPagination
-    %nav
-      %ul.page-nav
-        %tumblrblockPreviousPage
-          %li.newer <a class="button" href="{PreviousPage}">Newer posts</a>
-        %tumblrblockNextPage
-          %li.older <a class="button" href="{NextPage}">Older posts</a>
+    %nav.post-navigation
+      %div.pager-navigation
+        %ul.pager
+          %tumblrblockPreviousPage
+            %li.previous-link <a class="button" href="{PreviousPage}">Newer posts</a>
+          %tumblrblockNextPage
+            %li.next-link <a class="button" href="{NextPage}">Older posts</a>
