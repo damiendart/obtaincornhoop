@@ -9,9 +9,8 @@
 
 .pager-navigation {
   .pager {
+    @include reset-box-model;
     list-style: none;
-    margin: 0;
-    padding: 0;
     &:after {
       clear: both;
       content: "";
@@ -24,7 +23,6 @@
         border-radius: $base-line-height;
         display: inline-block;
         font-weight: bold;
-        margin: 0;
         padding: ($base-line-height / 2) $base-line-height; } }
         text-transform: uppercase;
     .previous-link {
@@ -35,9 +33,8 @@
 .post-metadata {
   color: $post-metadata-foreground-colour;
   .metadata-list {
+    @include reset-box-model;
     list-style: none;
-    margin: 0;
-    padding: 0;
     text-align: left;
     [class*="metadata"] {
       font-style: italic;
@@ -76,9 +73,8 @@
 .tumblr-notes {
   color: $post-metadata-foreground-colour;
   .notes {
+    @include reset-box-model;
     list-style: none;
-    margin: 0;
-    padding: 0;
     text-align: left;
     .note {
       margin: 0 0 0 $base-line-height;
@@ -130,5 +126,4 @@
     margin: ($base-line-height / 2) 0 0 $base-line-height;
     padding: 0;
     & > * {
-      margin: 0;
-      padding: 0; } } }
+      @include reset-box-model; } } }

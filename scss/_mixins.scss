@@ -4,9 +4,9 @@
 // This file is distributed under the MIT licence. For more information,
 // please refer to the accompanying "LICENCE" file.
 
-// Produces rules for links where when a user hovers over a link, the
-// background and foreground colours are swapped. At the moment, links that
-// have already been visited are not differentiated.
+// Produces declarations and rules for links where when a user hovers over a
+// link, the background and foreground colours are swapped. At the moment,
+// links that have already been visited are not differentiated.
 @mixin colour-swap-links($background-colour, $foreground-colour) {
   background: $background-colour;
   color: $foreground-colour;
@@ -17,3 +17,9 @@
     // TODO: Make visited links a little different from other links?
     background: $background-colour;
     color: $foreground-colour; } }
+
+// Produces declarations that reset the box-model measurements. See also
+// <http://reference.sitepoint.com/css/boxmodel>.
+@mixin reset-box-model() {
+  @each $property in ("border", "margin", "padding") {
+    #{$property}: 0; } }
