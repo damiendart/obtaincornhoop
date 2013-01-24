@@ -5,23 +5,15 @@
 @import "mixins";
 @import "variables";
 
-.comments {
-  background-color: $post-background-colour;
-  @each $prefix in ("", "-moz-", "-webkit-") {
-    // In most browsers, the following will produce a 9-pixel shadow along the
-    // bottom edge of the element, as well as inside on the top.
-    #{$prefix}box-shadow: 0 ($base-line-height / 2) ($base-line-height * 0.375)
-        ($base-line-height * -0.375) darken($page-background-colour, 30),
-        inset 0 ($base-line-height / 2) ($base-line-height * 0.375)
-        ($base-line-height * -0.375) darken($post-background-colour, 30); }
-  margin: 0 auto;
-  max-width: 28.25em; // In most browsers: 28.25 * 16px = 452px
-  padding: ($base-line-height / 2) $base-line-height;
+.layout-pagenavigation {
+  margin: $base-line-height auto 0 auto;
+  max-width: 34.25em; // In most browsers: 34.25 * 16px = 548px
   @media screen and (max-width: 768px) {
-    margin: 0 $base-line-height;
+    margin: ($base-line-height / 2) ($base-line-height / 2)
+        0 ($base-line-height / 2);
     max-width: 100%; } }
 
-.post {
+.layout-post {
   background-color: $post-background-colour;
   @each $prefix in ("", "-moz-", "-webkit-") {
     // In most browsers, the following will produce a 9-pixel shadow.
@@ -37,10 +29,18 @@
         0 ($base-line-height / 2);
     max-width: 100%; } }
 
-.post-navigation {
-  margin: $base-line-height auto 0 auto;
-  max-width: 34.25em; // In most browsers: 34.25 * 16px = 548px
+.layout-postcomments {
+  background-color: $post-background-colour;
+  @each $prefix in ("", "-moz-", "-webkit-") {
+    // In most browsers, the following will produce a 9-pixel shadow along the
+    // bottom edge of the element, as well as inside on the top.
+    #{$prefix}box-shadow: 0 ($base-line-height / 2) ($base-line-height * 0.375)
+        ($base-line-height * -0.375) darken($page-background-colour, 30),
+        inset 0 ($base-line-height / 2) ($base-line-height * 0.375)
+        ($base-line-height * -0.375) darken($post-background-colour, 30); }
+  margin: 0 auto;
+  max-width: 28.25em; // In most browsers: 28.25 * 16px = 452px
+  padding: ($base-line-height / 2) $base-line-height;
   @media screen and (max-width: 768px) {
-    margin: ($base-line-height / 2) ($base-line-height / 2)
-        0 ($base-line-height / 2);
+    margin: 0 $base-line-height;
     max-width: 100%; } }

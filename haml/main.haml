@@ -31,7 +31,7 @@
       %h2 Search Results For &ldquo;<i>{SearchQuery}</i>&rdquo;
   %tumblrblockPosts
     %article
-      %section.post
+      %section.layout-post
         %tumblrblockText
           %div.post-body
             %tumblrblockTitle
@@ -74,14 +74,14 @@
                     This post has <a href="{Permalink}#notes">{NoteCountWithLabel}</a>
     %tumblrblockPostNotes
       %a{:name => "notes"}
-      %section.comments
+      %section.layout-postcomments
         %div.tumblr-notes
           \{PostNotes}
   %tumblrblockNoSearchResults
     %article.post
       %p Nothing :(
   %tumblrblockPagination
-    %nav.post-navigation
+    %nav.layout-pagenavigation
       %div.pager-navigation
         %ul.pager
           %tumblrblockPreviousPage
