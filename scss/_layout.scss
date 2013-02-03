@@ -16,33 +16,9 @@
     max-width: 100%; } }
 
 .layout-post {
-  background-color: $post-background-colour;
-  @each $prefix in ("", "-moz-", "-webkit-") {
-    // In most browsers, the following will produce a 9-pixel shadow.
-    #{$prefix}box-shadow: 0 ($base-line-height / 2) ($base-line-height * 0.375)
-        ($base-line-height * -0.375) darken($page-background-colour, 30); }
   margin: $base-line-height auto 0 auto;
-  max-width: 31.25em; // In most browsers: 31.25 * 16px = 500px
-  padding: $base-line-height;
-  .post-body + .post-metadata {
-    margin: $base-line-height 0 0 0; }
+  max-width: 34.25em; // In most browsers: 31.25 * 16px = 500px
   @media screen and (max-width: 768px) {
     margin: ($base-line-height / 2) ($base-line-height / 2)
         0 ($base-line-height / 2);
-    max-width: 100%; } }
-
-.layout-postcomments {
-  background-color: $post-background-colour;
-  @each $prefix in ("", "-moz-", "-webkit-") {
-    // In most browsers, the following will produce a 9-pixel shadow along the
-    // bottom edge of the element, as well as inside on the top.
-    #{$prefix}box-shadow: 0 ($base-line-height / 2) ($base-line-height * 0.375)
-        ($base-line-height * -0.375) darken($page-background-colour, 30),
-        inset 0 ($base-line-height / 2) ($base-line-height * 0.375)
-        ($base-line-height * -0.375) darken($post-background-colour, 30); }
-  margin: 0 auto;
-  max-width: 28.25em; // In most browsers: 28.25 * 16px = 452px
-  padding: ($base-line-height / 2) $base-line-height;
-  @media screen and (max-width: 768px) {
-    margin: 0 $base-line-height;
     max-width: 100%; } }
