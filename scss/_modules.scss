@@ -33,16 +33,20 @@
 .postmetadata {
   background-color: $post-background-colour;
   @each $prefix in ("", "-moz-", "-webkit-") {
-    // In most browsers, the following will produce a 9-pixel shadow.
+    // In most browsers, the following declaration will produce a nine-pixel
+    // shadow along the bottom edge of the element.
     #{$prefix}box-shadow: 0 ($base-line-height / 2) ($base-line-height * 0.375)
         ($base-line-height * -0.375) darken($page-background-colour, 30); }
   color: $post-metadata-foreground-colour;
   padding: 0 $base-line-height $base-line-height $base-line-height;
-  .metadata-list {
+  a {
+    @include colour-swap-links($post-background-colour,
+        $post-metadata-foreground-colour); }
+  .postmetadata__metadatalist {
     @include reset-box-model;
     list-style: none;
     text-align: left;
-    [class*="metadata"] {
+    .postmetadata__metadatalist__item {
       font-style: italic;
       margin: 0 0 0 $base-line-height;
       text-indent: $base-line-height * -1;
@@ -52,29 +56,23 @@
         font-size: $base-font-size * 0.75;
         height: $base-line-height / 0.75;
         // Tweak line-height so icons glyphs align better with adjacent text.
-        // TODO: Test with non-iOS mobile browsers.
+        // TODO: Test in non-iOS mobile browsers.
         line-height: ($base-line-height / 0.75) * 1.2;
         speak: none;
         width: $base-line-height / 0.75; } }
-    .metadata-date:before {
-      content: "\e023"; }
-    .metadata-notes:before {
-      content: "\e005"; }
-    .metadata-source:before {
-      content: "\e087"; }
-    .metadata-tags {
-      &:before {
-        content: "\e042"; }
-      .tag-list {
-        display: inline;
-        padding: 0;
-        .tag {
-          display: inline;
-          &:not(:last-child):after {
-            content: ", "; } } } } }
-  a {
-    @include colour-swap-links($post-background-colour,
-        $post-metadata-foreground-colour); } }
+    @each $type in (("date", "\e023"), ("notes", "\e005"),
+        ("source", "\e087"), ("tags", "\e042")) {
+      .postmetadata__metadatalist__item--#{nth($type, 1)} {
+        &:before {
+          content: "#{nth($type, 2)}"; }
+        @if (nth($type, 1) == "tags") {
+          .postmetadata__metadatalist__item--tags__taglist {
+            display: inline;
+            padding: 0;
+            .postmetadata__metadatalist__item--tags__taglist__item {
+              display: inline;
+              &:not(:last-child):after {
+                content: ", "; } } } } } } } }
 
 .postnotes {
   background-color: $post-background-colour;

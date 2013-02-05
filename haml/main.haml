@@ -53,23 +53,26 @@
           %tumblrblockCaption {Caption}
       %tumblrblockDate
         %section.postmetadata
-          %ul.metadata-list
+          %ul.postmetadata__metadatalist
             %tumblrblockReblog
-              %li.metadata-date <a href="{Permalink}">Reblogged {TimeAgo}</a> from {ReblogParentName}
+              %li.postmetadata__metadatalist__item.postmetadata__metadatalist__item--date
+                <a href="{Permalink}">Reblogged {TimeAgo}</a> from {ReblogParentName}
             %tumblrblockNotReblog
-              %li.metadata-date <a href="{Permalink}">Posted {TimeAgo}</a>
+              %li.postmetadata__metadatalist__item.postmetadata__metadatalist__item--date
+                <a href="{Permalink}">Posted {TimeAgo}</a>
             %tumblrblockContentSource
-              %li.metadata-source Source: <a href="{SourceURL}">{SourceTitle}</a>
+              %li.postmetadata__metadatalist__item.postmetadata__metadatalist__item--source
+                Source: <a href="{SourceURL}">{SourceTitle}</a>
             %tumblrblockHasTags
-              %li.metadata-tags
+              %li.postmetadata__metadatalist__item.postmetadata__metadatalist__item--tags
                 Tagged with:
-                %ul.tag-list
+                %ul.postmetadata__metadatalist__item--tags__taglist
                   %tumblrblockTags
-                    %li.tag<
+                    %li.postmetadata__metadatalist__item--tags__taglist__item<
                       %a{:href => "{TagURL}"} {Tag}
             %tumblrblockIndexPage
               %tumblrblockNoteCount
-                %li.metadata-notes
+                %li.postmetadata__metadatalist__item.postmetadata__metadatalist__item--notes
                   This post has <a href="{Permalink}#notes">{NoteCountWithLabel}</a>
       %tumblrblockPostNotes
         %section.postnotes
