@@ -84,9 +84,11 @@
         %p Nothing :(
   %tumblrblockPagination
     %nav.layout-pagenavigation
-      %div.pager-navigation
-        %ul.pager
+      %div.pager
+        %ul.pager__pagerlist
           %tumblrblockPreviousPage
-            %li.previous-link <a class="button" href="{PreviousPage}">Newer posts</a>
+            %li.pager__pagerlist__item.pager__pagerlist__item--previouslink 
+              %a{:class => "pager__pagerlist__item__button", :href => "{PreviousPage}"} Newer posts
           %tumblrblockNextPage
-            %li.next-link <a class="button" href="{NextPage}">Older posts</a>
+            %li.pager__pagerlist__item.pager__pagerlist__item--nextlink
+              %a{:class => "pager__pagerlist__item__button", :href => "{NextPage}"} Older posts

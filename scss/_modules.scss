@@ -7,17 +7,17 @@
 @import "mixins";
 @import "variables";
 
-.pager-navigation {
-  .pager {
+.pager {
+  .pager__pagerlist {
     @include reset-box-model;
     list-style: none;
     &:after {
       clear: both;
       content: "";
       display: table; }
-    [class$="link"] {
+    .pager__pagerlist__item {
       display: inline-block;
-      .button {
+      .pager__pagerlist__item__button {
         @include colour-swap-links($post-background-colour,
             $post-foreground-colour);
         border-radius: $base-line-height;
@@ -25,9 +25,9 @@
         font-weight: bold;
         padding: ($base-line-height / 2) $base-line-height; } }
         text-transform: uppercase;
-    .previous-link {
+    .pager__pagerlist__item--previouslink {
       float: left; }
-    .next-link {
+    .pager__pagerlist__item--nextlink {
       float: right; } } }
 
 .postmetadata {
