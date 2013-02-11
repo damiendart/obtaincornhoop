@@ -7,36 +7,3 @@
 @import "mixins";
 @import "modules";
 @import "variables";
-
-// TODO: Refactor and relocate everything below.
-
-$article-background-colour: $post-background-colour;
-$article-foreground-colour: $post-foreground-colour;
-$article-meta-foreground-colour: $post-metadata-foreground-colour;
-$asset-folder-url: $asset-folder;
-$base-font-family: $base-font-stack;
-
-hgroup {
-  display: block; // Corrects 'block' display not defined in IE 8/9.
-  text-align: center;
-  & > h1 {
-    font-size: 200%;
-    line-height: ($base-line-height / 2);
-    // TODO: Explain magic number.
-    margin: 176px 0 ($base-line-height * 2) 0;
-    @media only screen and (max-width: 34.25em) {
-      // TODO: Implement mobile-friendly header.
-      display: none; } }
-  & > h2 {
-    font-size: 200%;
-    line-height: ($base-line-height / 2);
-    margin: 0;
-    @media only screen and (max-width: 34.25em) {
-      font-size: 150%;
-      line-height: ($base-line-height / 1.5) } }
-  @media only screen and (max-width: 34.25em) {
-    padding: 0 $base-line-height 0 $base-line-height; } }
-
-#corn {
-  margin: -310px auto -200px auto;
-  padding-left: 100px; }

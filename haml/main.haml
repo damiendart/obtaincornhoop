@@ -21,16 +21,26 @@
   %script{:src => "http://use.typekit.com/gwe8uye.js"}
   %script try{Typekit.load();}catch(e){}
 %body
-  %hgroup
-    %h1<
-      %a{:href => "/"}<
-        %img#corn{:src => "http://www.robotinaponcho.net/crap/blog-header.png"}
-    %tumblrblockDayPage
-      %h2 Posts from {DayOfMonth} {Month}, {Year}
-    %tumblrblockTagPage
-      %h2 Posts Tagged With &ldquo;<i>{Tag}</i>&rdquo;
-    %tumblrblockSearchPage
-      %h2 Search Results For &ldquo;<i>{SearchQuery}</i>&rdquo;
+  %header.layout-header
+    %hgroup.sitetitle
+      %h1.sitetitle__maintitle {Title}
+      %tumblrblockDayPage
+        %h2.sitetitle__subtitle Posts from {DayOfMonth} {Month}, {Year}
+      %tumblrblockTagPage
+        %h2.sitetitle__subtitle Posts Tagged With &ldquo;<i>{Tag}</i>&rdquo;
+      %tumblrblockSearchPage
+        %h2.sitetitle__subtitle Search Results For &ldquo;<i>{SearchQuery}</i>&rdquo;
+    %nav.navigation
+      %ul.navigation__linklist
+        %li.navigation__linklist__item>
+          %a{:class => "navigation__linklist__item__button", :href => "#"} About
+        %li.navigation__linklist__item>
+          %a{:class => "navigation__linklist__item__button", :href => "/archive/"} Archives
+        %tumblrblockAskEnabled
+          %li.navigation__linklist__item>
+            %a{:class => "navigation__linklist__item__button", :href => "/ask"} Ask
+        %li.navigation__linklist__item>
+          %a{:class => "navigation__linklist__item__button", :href => "{RSS}"} RSS Feed
   %tumblrblockPosts
     %article.layout-post
       %tumblrblockText
@@ -86,11 +96,11 @@
         %p Nothing :(
   %tumblrblockPagination
     %nav.layout-pagenavigation
-      %div.pager
-        %ul.pager__pagerlist
+      %div.navigation
+        %ul.navigation__linklist
           %tumblrblockPreviousPage
-            %li.pager__pagerlist__item.pager__pagerlist__item--previouslink 
-              %a{:class => "pager__pagerlist__item__button", :href => "{PreviousPage}"} Newer posts
+            %li.navigation__linklist__item.navigation__linklist__item--previouslink 
+              %a{:class => "navigation__linklist__item__button", :href => "{PreviousPage}"} Newer posts
           %tumblrblockNextPage
-            %li.pager__pagerlist__item.pager__pagerlist__item--nextlink
-              %a{:class => "pager__pagerlist__item__button", :href => "{NextPage}"} Older posts
+            %li.navigation__linklist__item.navigation__linklist__item--nextlink
+              %a{:class => "navigation__linklist__item__button", :href => "{NextPage}"} Older posts

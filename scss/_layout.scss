@@ -7,6 +7,12 @@
 @import "mixins";
 @import "variables";
 
+.layout-header {
+  margin: ($base-line-height * 6) auto ($base-line-height * 4);
+  max-width: 34.25em; // In most browsers: 34.25 * 16px = 548px
+  @media screen and (max-width: 768px) {
+    max-width: 100%; } }
+
 .layout-pagenavigation {
   margin: $base-line-height auto 0 auto;
   max-width: 34.25em; // In most browsers: 34.25 * 16px = 548px
