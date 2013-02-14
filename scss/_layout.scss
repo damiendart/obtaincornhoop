@@ -9,22 +9,8 @@
 
 .layout-header {
   margin: ($base-line-height * 6) auto ($base-line-height * 4);
-  max-width: 34.25em; // In most browsers: 34.25 * 16px = 548px
-  @media screen and (max-width: 768px) {
-    max-width: 100%; } }
+  width: 34.25em; } // In most browsers: 34.25 * 16px = 548px
 
-.layout-pagenavigation {
+.layout-pagenavigation, .layout-post {
   margin: $base-line-height auto 0 auto;
-  max-width: 34.25em; // In most browsers: 34.25 * 16px = 548px
-  @media screen and (max-width: 768px) {
-    margin: ($base-line-height / 2) ($base-line-height / 2)
-        0 ($base-line-height / 2);
-    max-width: 100%; } }
-
-.layout-post {
-  margin: $base-line-height auto 0 auto;
-  max-width: 34.25em; // In most browsers: 31.25 * 16px = 500px
-  @media screen and (max-width: 768px) {
-    margin: ($base-line-height / 2) ($base-line-height / 2)
-        0 ($base-line-height / 2);
-    max-width: 100%; } }
+  width: 34.25em; } // In most browsers: 34.25 * 16px = 548px

@@ -21,8 +21,7 @@
       margin: 0 0 0($base-line-height / 2);
       padding: ($base-line-height / 2) 0 0 0;
       .navigation__linklist__item__button {
-        @include colour-swap-links($post-background-colour,
-            $post-foreground-colour);
+        @include colour-swap-links($post-background-colour, $post-link-colour);
         border-radius: $base-line-height;
         display: inline-block;
         font-weight: bold;
@@ -35,16 +34,11 @@
 
 .postmetadata {
   background-color: $post-background-colour;
-  @each $prefix in ("", "-moz-", "-webkit-") {
-    // In most browsers, the following declaration will produce a nine-pixel
-    // shadow along the bottom edge of the element.
-    #{$prefix}box-shadow: 0 ($base-line-height / 2) ($base-line-height * 0.375)
-        ($base-line-height * -0.375) darken($page-background-colour, 30); }
-  color: $post-metadata-foreground-colour;
+  color: $post-metadata-colour;
   padding: 0 $base-line-height $base-line-height $base-line-height;
   a {
     @include colour-swap-links($post-background-colour,
-        $post-metadata-foreground-colour); }
+        $post-metadata-link-colour); }
   .postmetadata__metadatalist {
     @include reset-box-model;
     list-style: none;
@@ -80,13 +74,12 @@
 .postnotes {
   background-color: $post-background-colour;
   @each $prefix in ("", "-moz-", "-webkit-") {
-    // In most browsers, the following will produce a 9-pixel shadow along the
-    // bottom edge of the element, as well as inside on the top.
-    #{$prefix}box-shadow: 0 ($base-line-height / 2) ($base-line-height * 0.375)
-        ($base-line-height * -0.375) darken($page-background-colour, 30),
-        inset 0 ($base-line-height / 2) ($base-line-height * 0.375)
-        ($base-line-height * -0.375) darken($post-background-colour, 30); }
-  color: $post-metadata-foreground-colour;
+    // In most browsers, the following will produce a nine-pixel inset shadow
+    // along the top edge of the element.
+    #{$prefix}box-shadow: inset 0 ($base-line-height / 2) 
+      ($base-line-height * 0.375) ($base-line-height * -0.375) 
+      darken($post-background-colour, 30); }
+  color: $post-metadata-colour;
   margin: 0 $base-line-height;
   padding: ($base-line-height / 2) $base-line-height;
   .notes {
@@ -116,20 +109,15 @@
         display: none; } } }
   a {
     @include colour-swap-links($post-background-colour,
-        $post-metadata-foreground-colour); } }
+        $post-metadata-colour); } }
 
 .postbody {
   background-color: $post-background-colour;
-  @each $prefix in ("", "-moz-", "-webkit-") {
-    // In most browsers, the following will produce a 9-pixel shadow.
-    #{$prefix}box-shadow: 0 ($base-line-height / 2) ($base-line-height * 0.375)
-        ($base-line-height * -0.375) darken($page-background-colour, 30); }
-  color: $post-foreground-colour;
+  color: $post-colour;
   padding: $base-line-height;
   text-align: left;
   a {
-    @include colour-swap-links($post-background-colour,
-        $post-foreground-colour); }
+    @include colour-swap-links($post-background-colour, $post-link-colour); }
   blockquote {
     margin: ($base-line-height / 2) 0 0 0;
     padding: 0 0 0 $base-line-height; }

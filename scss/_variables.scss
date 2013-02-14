@@ -1,13 +1,25 @@
+// Variables for Obtain Corn Hoop.
+//
 // Copyright (C) 2013 Damien Dart, <damiendart@pobox.com>.
 // This file is distributed under the MIT licence. For more information,
 // please refer to the accompanying "LICENCE" file.
 
+// External-asset-related variables.
 $asset-folder: "http://www.robotinaponcho.net/crap/";
+
+// Typography-related and layout-related variables.
 $base-font-size: 100%;
 $base-font-stack: "Helvetica Neue", Helvetica, Arial, sans-serif;
 $base-line-height: 1.5em;
+$monospace-font-stack: Monaco, Menlo, Consolas, "Courier New", monospace;
+
+// Post-related variables.
 $post-background-colour: #ffffff;
-$post-foreground-colour: #000000;
-$post-metadata-foreground-colour: lighten($post-foreground-colour, 75);
+$post-colour: #000000;
+$post-link-colour: $post-colour;
+$post-metadata-colour: lighten($post-colour, 75);
+$post-metadata-link-colour: $post-metadata-colour;
+
+// Page-related variables.
 $page-background-colour: #f6233c;
-$page-foreground-colour: #ffffff;
+$page-colour: #ffffff;

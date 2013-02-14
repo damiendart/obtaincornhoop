@@ -26,7 +26,7 @@ article, hgroup, nav, section {
 
 body {
   background: $page-background-colour;
-  color: $page-foreground-colour;
+  color: $page-colour;
   // I think setting the font-size initially to 100% fixes some IE bug?
   font: 100%/#{$base-line-height} $base-font-stack;
   @if ($base-font-size != 100%) {
@@ -35,10 +35,7 @@ body {
   margin: 0 0 ($base-line-height * 2) 0;
   text-align: center;
   // Prevent text funkiness when changing orientation on iOS devices.
-  -webkit-text-size-adjust: 100%;
-  @media screen and (max-width: 768px) {
-    font-size: 87.5%; // In most browsers: 0.875 * 16px = 14px
-    margin: 0 0 ($base-line-height / 2) 0; } }
+  -webkit-text-size-adjust: 100%; }
 
 iframe, img {
   border-style: none; // Remove border on linked images.
