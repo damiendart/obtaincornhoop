@@ -4,6 +4,7 @@
 // This file is distributed under the MIT licence. For more information,
 // please refer to the accompanying "LICENCE" file.
 
+@import "functions";
 @import "mixins";
 @import "variables";
 
@@ -28,11 +29,13 @@ body {
   background: $page-background-colour;
   color: $page-colour;
   // I think setting the font-size initially to 100% fixes some IE bug?
-  font: 100%/#{$base-line-height} $base-font-stack;
-  @if ($base-font-size != 100%) {
-    font-size: $base-font-size; }
+  font: 100% $base-font-stack;
+  // TODO: Explain the reason behind this if-statement.
+  @if ($base-font-size != 16px) {
+    font-size: calculate_percentage($base-font-size, 16); }
   -webkit-font-smoothing: antialiasing;
-  margin: 0 0 ($base-line-height * 2) 0;
+  line-height: calculate_em($base-line-height, $base-font-size);
+  margin: 0 0 calculate_em($base-layout-unit * 2, $base-font-size) 0;
   text-align: center;
   // Prevent text funkiness when changing orientation on iOS devices.
   -webkit-text-size-adjust: 100%; }

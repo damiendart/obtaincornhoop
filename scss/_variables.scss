@@ -8,9 +8,10 @@
 $asset-folder: "http://www.robotinaponcho.net/crap/";
 
 // Typography-related and layout-related variables.
-$base-font-size: 100%;
+$base-font-size: 16px;
 $base-font-stack: "Helvetica Neue", Helvetica, Arial, sans-serif;
-$base-line-height: 1.5em;
+$base-line-height: 24px;
+$base-layout-unit: $base-line-height;
 $monospace-font-stack: Monaco, Menlo, Consolas, "Courier New", monospace;
 
 // Post-related variables.

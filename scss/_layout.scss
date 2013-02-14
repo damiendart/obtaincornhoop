@@ -4,13 +4,15 @@
 // This file is distributed under the MIT licence. For more information,
 // please refer to the accompanying "LICENCE" file.
 
+@import "functions";
 @import "mixins";
 @import "variables";
 
 .layout-header {
-  margin: ($base-line-height * 6) auto ($base-line-height * 4);
-  width: 34.25em; } // In most browsers: 34.25 * 16px = 548px
+  margin: calculate_em($base-layout-unit * 6, $base-font-size) auto 
+      calculate_em($base-layout-unit * 4, $base-font-size) auto;
+  width: calculate_em(($base-layout-unit * 2) + 500px, $base-font-size); }
 
 .layout-pagenavigation, .layout-post {
-  margin: $base-line-height auto 0 auto;
-  width: 34.25em; } // In most browsers: 34.25 * 16px = 548px
+  margin: calculate_em($base-layout-unit, $base-font-size) auto 0 auto;
+  width: calculate_em(($base-layout-unit * 2) + 500px, $base-font-size); }

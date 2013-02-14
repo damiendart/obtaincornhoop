@@ -4,13 +4,15 @@
 // This file is distributed under the MIT licence. For more information,
 // please refer to the accompanying "LICENCE" file.
 
+@import "functions";
 @import "mixins";
 @import "variables";
 
 .navigation {
   .navigation__linklist {
     list-style: none;
-    margin: ($base-line-height / -2) 0 0 ($base-line-height / -2);
+    margin: calculate_em($base-layout-unit / -2, $base-font-size) 0
+        0 calculate_em($base-layout-unit / -2, $base-font-size);
     padding: 0;
     &:after {
       clear: both;
@@ -18,14 +20,15 @@
       display: table; }
     .navigation__linklist__item {
       display: inline-block;
-      margin: 0 0 0($base-line-height / 2);
-      padding: ($base-line-height / 2) 0 0 0;
+      margin: 0 0 0 calculate_em($base-layout-unit / 2, $base-font-size);
+      padding: calculate_em($base-layout-unit / 2, $base-font-size) 0 0 0;
       .navigation__linklist__item__button {
         @include colour-swap-links($post-background-colour, $post-link-colour);
-        border-radius: $base-line-height;
+        border-radius: calculate_em($base-layout-unit, $base-font-size);
         display: inline-block;
         font-weight: bold;
-        padding: ($base-line-height / 2) $base-line-height; } }
+        padding: calculate_em($base-layout-unit / 2, $base-font-size) 
+            calculate_em($base-layout-unit, $base-font-size); } }
         text-transform: uppercase;
     .navigation__linklist__item--previouslink {
       float: left; }
@@ -35,7 +38,9 @@
 .postmetadata {
   background-color: $post-background-colour;
   color: $post-metadata-colour;
-  padding: 0 $base-line-height $base-line-height $base-line-height;
+  padding: 0 calculate_em($base-layout-unit, $base-font-size)
+      calculate_em($base-layout-unit, $base-font-size)
+      calculate_em($base-layout-unit, $base-font-size);
   a {
     @include colour-swap-links($post-background-colour,
         $post-metadata-link-colour); }
@@ -45,18 +50,21 @@
     text-align: left;
     .postmetadata__metadatalist__item {
       font-style: italic;
-      margin: 0 0 0 $base-line-height;
-      text-indent: $base-line-height * -1;
+      margin: 0 0 0 calculate_em($base-layout-unit, $base-font-size);
+      text-indent: calculate_em($base-layout-unit * -1, $base-font-size);
       &:before {
+        $icon-font-size: 12px;
+        // The funky line-height is there so that icon glyphs align better
+        // with adjacent text, at least in Webkit browsers.
+        // TODO: Text in non-Webkit browsers.
+        $icon-line-height: 28.8px;
         float: left;
         font-family: "Glyphicons Halflings";
-        font-size: $base-font-size * 0.75;
-        height: $base-line-height / 0.75;
-        // Tweak line-height so icons glyphs align better with adjacent text.
-        // TODO: Test in non-iOS mobile browsers.
-        line-height: ($base-line-height / 0.75) * 1.2;
+        font-size: calculate_percentage($icon-font-size, $base-font-size);
+        height: calculate_em($base-line-height, $icon-font-size);
+        line-height: calculate_em($icon-line-height, $icon-font-size);
         speak: none;
-        width: $base-line-height / 0.75; } }
+        width: calculate_em($base-line-height, $icon-font-size); } }
     @each $type in (("date", "\e023"), ("notes", "\e005"),
         ("source", "\e087"), ("tags", "\e042")) {
       .postmetadata__metadatalist__item--#{nth($type, 1)} {
@@ -74,59 +82,60 @@
 .postnotes {
   background-color: $post-background-colour;
   @each $prefix in ("", "-moz-", "-webkit-") {
-    // In most browsers, the following will produce a nine-pixel inset shadow
-    // along the top edge of the element.
-    #{$prefix}box-shadow: inset 0 ($base-line-height / 2) 
-      ($base-line-height * 0.375) ($base-line-height * -0.375) 
+    #{$prefix}box-shadow: inset 0 
+      calculate_em($base-layout-unit / 2, $base-font-size) 
+      calculate_em($base-layout-unit / 2, $base-font-size) 
+      calculate_em($base-layout-unit / -2, $base-font-size) 
       darken($post-background-colour, 30); }
   color: $post-metadata-colour;
-  margin: 0 $base-line-height;
-  padding: ($base-line-height / 2) $base-line-height;
+  margin: 0 calculate_em($base-layout-unit, $base-font-size);
+  padding: calculate_em($base-layout-unit / 2, $base-font-size)
+      calculate_em($base-layout-unit, $base-font-size);
+  a {
+    @include colour-swap-links($post-background-colour, $post-metadata-colour); }
   .notes {
     @include reset-box-model;
     list-style: none;
     text-align: left;
     .note {
-      margin: 0 0 0 $base-line-height;
+      margin: 0 0 0 calculate_em($base-layout-unit, $base-font-size);
       blockquote {
         display: inline;
         margin: 0; }
       .action {
-        margin: 0 0 0 ($base-line-height * -1); }
-      // TODO: Check if this works as intended in older browsers.
+        margin: 0 0 0 calculate_em($base-layout-unit * -1, $base-font-size); }
       .avatar_frame {
         float: left;
-        height: $base-line-height;
-        left: $base-line-height * -1;
+        height: calculate_em($base-line-height, $base-font-size);
+        left: calculate_em($base-line-height * -1, $base-font-size);
         position: relative;
-        opacity: 0.25; // Poor man's grey tint.
-        width: $base-line-height;
+        width: calculate_em($base-line-height, $base-font-size);
         .avatar {
-          margin: -8px 0 0 0; // Assuming avatar images are 16 by 16.
+          margin: -8px 0 0 0; // Assume avatar images are 16 by 16.
+          opacity: 0.25; // Poor man's grey tint.
           position: relative;
           top: 50%; } }
       .clear {
-        display: none; } } }
-  a {
-    @include colour-swap-links($post-background-colour,
-        $post-metadata-colour); } }
+        display: none; } } } }
 
 .postbody {
   background-color: $post-background-colour;
   color: $post-colour;
-  padding: $base-line-height;
+  padding: calculate_em($base-layout-unit, $base-font-size);
   text-align: left;
   a {
     @include colour-swap-links($post-background-colour, $post-link-colour); }
   blockquote {
-    margin: ($base-line-height / 2) 0 0 0;
-    padding: 0 0 0 $base-line-height; }
+    margin: calculate_em($base-line-height / 2, $base-font-size) 0 0 0;
+    padding: 0 0 0 calculate_em($base-line-height, $base-font-size); }
   h1 {
-    font-size: 150%;
-    line-height: ($base-line-height / 1.5);
-    margin: 0 0 ($base-line-height / 1.5) 0; }
+    $heading-font-size: 24px;
+    $heading-line-height: 36px;
+    font-size: calculate_percentage($heading-font-size, $base-font-size); 
+    line-height: calculate_em($heading-line-height, $heading-font-size);
+    margin: 0 0 calculate_em($base-line-height / 2, $heading-font-size) 0; }
   p {
-    margin: ($base-line-height / 2) 0 0 0;
+    margin: calculate_em($base-line-height / 2, $base-font-size) 0 0 0;
     &.quote-attribution {
       text-align: right;
       font-style: italic; }
@@ -134,23 +143,28 @@
       margin: 0; } }
   ol, ul {
     list-style: square;
-    margin: ($base-line-height / 2) 0 0 $base-line-height;
+    margin: calculate_em($base-line-height / 2, $base-font-size) 0
+        0 calculate_em($base-line-height, $base-font-size);
     padding: 0;
     & > * {
       @include reset-box-model; } } }
  
 .sitetitle {
-  margin: ($base-line-height * 1.5) 0 ($base-line-height / 2) 0;
+  $main-title-font-size: 48px;
+  $main-title-line-height: 48px;
+  $sub-title-font-size: 24px;
+  $sub-title-line-height: 36px;
+  margin: 0 0 calculate_em($base-layout-unit / 2, $base-font-size) 0;
+  text-align: center;
   .sitetitle__maintitle {
-    font-size: 300%;
-    line-height: $base-line-height / 1.5;
+    font-size: calculate_percentage($main-title-font-size, $base-font-size);
+    line-height: calculate_em($main-title-line-height, $main-title-font-size);
     margin: 0;
-    text-align: center;
     text-transform: uppercase;
     &:only-child {
-      padding-top: ($base-line-height / 2) } }
+      padding: calculate_em($sub-title-line-height, $main-title-font-size) 0 0 0; } }
   .sitetitle__subtitle {
-    font-size: 150%;
-    line-height: $base-line-height;
-    margin: 0 0 ($base-line-height / 3) 0;
+    font-size: calculate_percentage($sub-title-font-size, $base-font-size);
+    line-height: calculate_em($sub-title-line-height, $sub-title-font-size);
+    margin: 0 0 calculate_em($base-layout-unit / 2, $sub-title-font-size) 0;
     text-align: center; } }
