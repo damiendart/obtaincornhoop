@@ -103,3 +103,13 @@
           %tumblrblockNextPage
             %li.navigation__linklist__item.navigation__linklist__item--nextlink
               %a{:class => "navigation__linklist__item__button", :href => "{NextPage}"} Older posts
+  %tumblrblockDayPagination
+    %nav.layout-pagenavigation
+      %div.navigation
+        %ul.navigation__linklist
+          %tumblrblockPreviousDayPage
+            %li.navigation__linklist__item.navigation__linklist__item--previouslink 
+              %a{:class => "navigation__linklist__item__button", :href => "{PreviousDayPage}"} {DayOfMonth} {Month}, {Year}
+          %tumblrblockNextDayPage
+            %li.navigation__linklist__item.navigation__linklist__item--nextlink
+              %a{:class => "navigation__linklist__item__button", :href => "{NextDayPage}"} {DayOfMonth} {Month}, {Year}
