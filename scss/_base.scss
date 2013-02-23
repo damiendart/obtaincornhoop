@@ -35,7 +35,7 @@ body {
     font-size: calculate_percentage($base-font-size, 16); }
   -webkit-font-smoothing: antialiasing;
   line-height: calculate_em($base-line-height, $base-font-size);
-  margin: 0 0 calculate_em($base-layout-unit * 2, $base-font-size) 0;
+  margin: 0 0 calculate_em($base-layout-unit * 3, $base-font-size) 0;
   text-align: center;
   // Prevent text funkiness when changing orientation on iOS devices.
   -webkit-text-size-adjust: 100%; }

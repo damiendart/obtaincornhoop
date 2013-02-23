@@ -9,10 +9,9 @@
 @import "variables";
 
 .layout-header {
-  margin: calculate_em($base-layout-unit * 6, $base-font-size) auto 
-      calculate_em($base-layout-unit * 4, $base-font-size) auto;
+  margin: calculate_em($base-layout-unit * 3, $base-font-size) auto;
   width: calculate_em(($base-layout-unit * 2) + 500px, $base-font-size); }
 
-.layout-pagenavigation, .layout-post {
+.layout-pagenavigation, .layout-post, .layout-subheader {
   margin: calculate_em($base-layout-unit, $base-font-size) auto 0 auto;
   width: calculate_em(($base-layout-unit * 2) + 500px, $base-font-size); }

@@ -150,21 +150,20 @@
       @include reset-box-model; } } }
  
 .sitetitle {
-  $main-title-font-size: 48px;
-  $main-title-line-height: 48px;
-  $sub-title-font-size: 24px;
-  $sub-title-line-height: 36px;
-  margin: 0 0 calculate_em($base-layout-unit / 2, $base-font-size) 0;
-  text-align: center;
-  .sitetitle__maintitle {
+  .sitetitle__mainheader {
+    $main-title-font-size: 48px;
+    $main-title-line-height: 48px;
     font-size: calculate_percentage($main-title-font-size, $base-font-size);
     line-height: calculate_em($main-title-line-height, $main-title-font-size);
-    margin: 0;
-    text-transform: uppercase;
-    &:only-child {
-      padding: calculate_em($sub-title-line-height, $main-title-font-size) 0 0 0; } }
-  .sitetitle__subtitle {
+    margin: 0 0 calculate_em($base-layout-unit / 2, $main-title-font-size) 0;
+    text-align: center;
+    text-transform: uppercase; } }
+
+.sitesubtitle {
+	.sitesubtitle__mainheader {
+    $sub-title-font-size: 30px;
+    $sub-title-line-height: 36px;
     font-size: calculate_percentage($sub-title-font-size, $base-font-size);
     line-height: calculate_em($sub-title-line-height, $sub-title-font-size);
-    margin: 0 0 calculate_em($base-layout-unit / 2, $sub-title-font-size) 0;
+    margin: 0;
     text-align: center; } }
