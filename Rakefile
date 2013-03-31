@@ -7,6 +7,11 @@ require "rake"
 require "rake/clean"
 require "sass"
 
+# Increase the degree of precision of values that Sass spits out to prevent
+# some browsers from rendering elements a pixel narrower than intended. See
+# <https://github.com/nex3/sass/issues/319> for more information.
+Sass::Script::Number.precision = 8
+
 CLOBBER.include("*.css", "*.html")
 task :default => ["theme.html", "blog-style.css"]
 
