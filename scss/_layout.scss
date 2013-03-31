@@ -8,9 +8,11 @@
 @import "mixins";
 @import "variables";
 
-.layout-header {
-  margin: calculate_em($base-layout-unit * 3, $base-font-size) auto;
-  width: calculate_em(($base-layout-unit * 2) + 500px, $base-font-size); }
+.layout-siteheader {
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%; }
 
 .layout-pagenavigation, .layout-post, .layout-subheader {
   margin: calculate_em($base-layout-unit, $base-font-size) auto 0 auto;

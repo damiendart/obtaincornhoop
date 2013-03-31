@@ -20,20 +20,24 @@
   %script{:src => "http://use.typekit.com/gwe8uye.js"}
   %script try{Typekit.load();}catch(e){}
 %body
-  %header.layout-header
-    .sitetitle
-      %h1.sitetitle__mainheader {Title}
-    %nav.navigation
-      %ul.navigation__linklist
-        %li.navigation__linklist__item>
-          %a{:class => "navigation__linklist__item__button", :href => "/"} Home
-        %li.navigation__linklist__item>
-          %a{:class => "navigation__linklist__item__button", :href => "/archive"} Archives
-        %li.navigation__linklist__item>
-          %a{:class => "navigation__linklist__item__button", :href => "/about"} About
-        %tumblrblockAskEnabled
-          %li.navigation__linklist__item>
-            %a{:class => "navigation__linklist__item__button", :href => "/ask"} Ask
+  %header.layout-siteheader
+    .siteheader
+      .siteheader__container
+        .siteheader__container__sitetitle
+          .sitetitle
+            %h1.sitetitle__mainheader {Title}
+        .siteheader__container__sitenavigation
+          %nav.navigation
+            %ul.navigation__linklist
+              %li.navigation__linklist__item>
+                %a{:class => "navigation__linklist__item__button", :href => "/"} Home
+              %li.navigation__linklist__item>
+                %a{:class => "navigation__linklist__item__button", :href => "/archive"} Archives
+              %li.navigation__linklist__item>
+                %a{:class => "navigation__linklist__item__button", :href => "/about"} About
+              %tumblrblockAskEnabled
+                %li.navigation__linklist__item>
+                  %a{:class => "navigation__linklist__item__button", :href => "/ask"} Ask
   %section
     %tumblrblockDayPage
       .layout-subheader
