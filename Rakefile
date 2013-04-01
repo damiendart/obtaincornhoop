@@ -16,7 +16,7 @@ CLOBBER.include("*.css", "*.html")
 task :default => ["theme.html", "blog-style.css"]
 
 desc "Spit out the Obtain Corn Hoop theme stylesheet."
-file "blog-style.css" => Dir.glob(File.join("scss" ,"*")) do |task|
+file "style.css" => Dir.glob(File.join("scss" ,"*")) do |task|
   puts "# Spitting out \"" + task.name + "\"."
   output = Sass::Engine.for_file(File.join("scss", "main.scss"),
       {:cache => false, :style => :compact, :syntax => :scss}).render
