@@ -38,93 +38,91 @@
               %tumblrblockAskEnabled
                 %li.navigation__linklist__item>
                   %a{:class => "navigation__linklist__item__button", :href => "/ask"} Ask
-  %section
-    %tumblrblockDayPage
-      .layout-subheader
-        .sitesubtitle
-          %h2.sitesubtitle__mainheader Posts from {DayOfMonth} {Month}, {Year}
-    %tumblrblockTagPage
-      .layout-subheader
-        .sitesubtitle
-          %h2.sitesubtitle__mainheader Posts Tagged With &ldquo;<i>{Tag}</i>&rdquo;
-    %tumblrblockSearchPage
-      .layout-subheader
-        .sitesubtitle
-          %h2.sitesubtitle__mainheader Search Results For &ldquo;<i>{SearchQuery}</i>&rdquo;
-    %tumblrblockPosts
-      %article.layout-post
-        %tumblrblockText
+  %div.layout-content
+    %section.layout-content__content.layout-content__content--maincontent
+      %tumblrblockDayPage
+        .pagetitle
+          %h2.pagetitle__title Posts from {DayOfMonth} {Month}, {Year}
+      %tumblrblockTagPage
+        .pagetitle
+          %h2.pagetitle__title Posts Tagged With &ldquo;<i>{Tag}</i>&rdquo;
+      %tumblrblockSearchPage
+        .pagetitle
+          %h2.pagetitle__title Search Results For &ldquo;<i>{SearchQuery}</i>&rdquo;
+      %tumblrblockPosts
+        %article.post
+          %tumblrblockText
+            %section.postbody
+              %tumblrblockTitle
+                %h1 {Title}
+              {Body}
+          %tumblrblockPhotoset
+            %section.postbody
+              \{Photoset-500}
+              %tumblrblockCaption {Caption}
+          %tumblrblockPhoto
+            %section.postbody
+              \{LinkOpenTag}
+              %img.main{:alt => "{PhotoAlt}", :src => "{PhotoURL-500}"}>
+              \{LinkCloseTag}
+              %tumblrblockCaption {Caption}
+          %tumblrblockQuote
+            %section.postbody
+              %p <q>{Quote}</q>
+              %tumblrblockSource
+                %p.quote-attribution &mdash; {Source}
+          %tumblrblockVideo
+            %section.postbody
+              \{Video-500}
+              %tumblrblockCaption {Caption}
+          %tumblrblockDate
+            %section.postmetadata
+              %ul.postmetadata__metadatalist
+                %tumblrblockReblog
+                  %li.postmetadata__metadatalist__item.postmetadata__metadatalist__item--date
+                    <a href="{Permalink}">Reblogged {TimeAgo}</a> from {ReblogParentName}
+                %tumblrblockNotReblog
+                  %li.postmetadata__metadatalist__item.postmetadata__metadatalist__item--date
+                    <a href="{Permalink}">Posted {TimeAgo}</a>
+                %tumblrblockContentSource
+                  %li.postmetadata__metadatalist__item.postmetadata__metadatalist__item--source
+                    Source: <a href="{SourceURL}">{SourceTitle}</a>
+                %tumblrblockHasTags
+                  %li.postmetadata__metadatalist__item.postmetadata__metadatalist__item--tags
+                    Tagged with:
+                    %ul.postmetadata__metadatalist__item--tags__taglist
+                      %tumblrblockTags
+                        %li.postmetadata__metadatalist__item--tags__taglist__item<
+                          %a{:href => "{TagURL}"} {Tag}
+                %tumblrblockIndexPage
+                  %tumblrblockNoteCount
+                    %li.postmetadata__metadatalist__item.postmetadata__metadatalist__item--notes
+                      This post has <a href="{Permalink}#notes">{NoteCountWithLabel}</a>
+          %tumblrblockPostNotes
+            %section.postnotes
+              %a{:name => "notes"}
+              {PostNotes}
+      %tumblrblockNoSearchResults
+        %article.post
           %section.postbody
-            %tumblrblockTitle
-              %h1 {Title}
-            {Body}
-        %tumblrblockPhotoset
-          %section.postbody
-            \{Photoset-500}
-            %tumblrblockCaption {Caption}
-        %tumblrblockPhoto
-          %section.postbody
-            \{LinkOpenTag}
-            %img.main{:alt => "{PhotoAlt}", :src => "{PhotoURL-500}"}>
-            \{LinkCloseTag}
-            %tumblrblockCaption {Caption}
-        %tumblrblockQuote
-          %section.postbody
-            %p <q>{Quote}</q>
-            %tumblrblockSource
-              %p.quote-attribution &mdash; {Source}
-        %tumblrblockVideo
-          %section.postbody
-            \{Video-500}
-            %tumblrblockCaption {Caption}
-        %tumblrblockDate
-          %section.postmetadata
-            %ul.postmetadata__metadatalist
-              %tumblrblockReblog
-                %li.postmetadata__metadatalist__item.postmetadata__metadatalist__item--date
-                  <a href="{Permalink}">Reblogged {TimeAgo}</a> from {ReblogParentName}
-              %tumblrblockNotReblog
-                %li.postmetadata__metadatalist__item.postmetadata__metadatalist__item--date
-                  <a href="{Permalink}">Posted {TimeAgo}</a>
-              %tumblrblockContentSource
-                %li.postmetadata__metadatalist__item.postmetadata__metadatalist__item--source
-                  Source: <a href="{SourceURL}">{SourceTitle}</a>
-              %tumblrblockHasTags
-                %li.postmetadata__metadatalist__item.postmetadata__metadatalist__item--tags
-                  Tagged with:
-                  %ul.postmetadata__metadatalist__item--tags__taglist
-                    %tumblrblockTags
-                      %li.postmetadata__metadatalist__item--tags__taglist__item<
-                        %a{:href => "{TagURL}"} {Tag}
-              %tumblrblockIndexPage
-                %tumblrblockNoteCount
-                  %li.postmetadata__metadatalist__item.postmetadata__metadatalist__item--notes
-                    This post has <a href="{Permalink}#notes">{NoteCountWithLabel}</a>
-        %tumblrblockPostNotes
-          %section.postnotes
-            %a{:name => "notes"}
-            {PostNotes}
-    %tumblrblockNoSearchResults
-      %article.layout-post
-        %section.postbody
-          %p Nothing :(
-  %tumblrblockPagination
-    %nav.layout-pagenavigation
-      %div.navigation
-        %ul.navigation__linklist
-          %tumblrblockPreviousPage
-            %li.navigation__linklist__item.navigation__linklist__item--previouslink 
-              %a{:class => "navigation__linklist__item__button", :href => "{PreviousPage}"} Newer posts
-          %tumblrblockNextPage
-            %li.navigation__linklist__item.navigation__linklist__item--nextlink
-              %a{:class => "navigation__linklist__item__button", :href => "{NextPage}"} Older posts
-  %tumblrblockDayPagination
-    %nav.layout-pagenavigation
-      %div.navigation
-        %ul.navigation__linklist
-          %tumblrblockPreviousDayPage
-            %li.navigation__linklist__item.navigation__linklist__item--previouslink 
-              %a{:class => "navigation__linklist__item__button", :href => "{PreviousDayPage}"} {DayOfMonth} {Month}, {Year}
-          %tumblrblockNextDayPage
-            %li.navigation__linklist__item.navigation__linklist__item--nextlink
-              %a{:class => "navigation__linklist__item__button", :href => "{NextDayPage}"} {DayOfMonth} {Month}, {Year}
+            %p Nothing :(
+      %tumblrblockPagination
+        %nav.pagenavigation
+          %div.navigation
+            %ul.navigation__linklist
+              %tumblrblockPreviousPage
+                %li.navigation__linklist__item.navigation__linklist__item--previouslink 
+                  %a{:class => "navigation__linklist__item__button", :href => "{PreviousPage}"} Newer posts
+              %tumblrblockNextPage
+                %li.navigation__linklist__item.navigation__linklist__item--nextlink
+                  %a{:class => "navigation__linklist__item__button", :href => "{NextPage}"} Older posts
+      %tumblrblockDayPagination
+        %nav.pagenavigation
+          %div.navigation
+            %ul.navigation__linklist
+              %tumblrblockPreviousDayPage
+                %li.navigation__linklist__item.navigation__linklist__item--previouslink 
+                  %a{:class => "navigation__linklist__item__button", :href => "{PreviousDayPage}"} {DayOfMonth} {Month}, {Year}
+              %tumblrblockNextDayPage
+                %li.navigation__linklist__item.navigation__linklist__item--nextlink
+                  %a{:class => "navigation__linklist__item__button", :href => "{NextDayPage}"} {DayOfMonth} {Month}, {Year}
