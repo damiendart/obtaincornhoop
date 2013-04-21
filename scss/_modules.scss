@@ -158,11 +158,17 @@
   .siteheader__container {
     margin: 0 auto;
     padding: $base-layout-unit 0;
-    width: calculate_em(872px, $base-font-size);
+    // TODO: Remove poor-man's responsive layout bullshit.
+    @media screen and (min-width: 872px) {
+      width: calculate_em(872px, $base-font-size); }
     .siteheader__container__sitetitle {
-      float: left; }
+      // TODO: Remove poor-man's responsive layout bullshit.
+      @media screen and (min-width: 872px) {
+      float: left; } }
     .siteheader__container__sitenavigation {
-      float: right; }
+      // TODO: Remove poor-man's responsive layout bullshit.
+      @media screen and (min-width: 872px) {
+      float: right; } }
     &:after {
       clear: both;
       content: "";

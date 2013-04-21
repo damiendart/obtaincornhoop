@@ -9,8 +9,10 @@
 @import "variables";
 
 .layout-content {
-  width: calculate_em(872px, $base-font-size);
   margin: 0 auto;
+  // TODO: Remove poor-man's responsive layout bullshit.
+  @media screen and (min-width: 872px) {
+    width: calculate_em(872px, $base-font-size); }
   .layout-content__content {
     // The use of "inline-block" means that there cannot be any whitespace
     // between the main and side content elements.

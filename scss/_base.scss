@@ -39,7 +39,11 @@ body {
       calculate_em($base-layout-unit * 3, $base-font-size) 0;
   text-align: center;
   // Prevent text funkiness when changing orientation on iOS devices.
-  -webkit-text-size-adjust: 100%; }
+  -webkit-text-size-adjust: 100%;
+  // TODO: Remove poor-man's responsive layout bullshit.
+  @media screen and (max-width: 872px) {
+    margin-top: calculate_em(($base-layout-unit * 4) + 48px,
+        $base-font-size); } }
 
 iframe, img {
   border-style: none; // Remove border on linked images.
