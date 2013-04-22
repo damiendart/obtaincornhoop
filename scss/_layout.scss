@@ -16,7 +16,8 @@
   .layout-content__content {
     // The use of "inline-block" means that there cannot be any whitespace
     // between the main and side content elements.
-    display: inline-block; }
+    display: inline-block;
+    vertical-align: top; }
   .layout-content__content--maincontent {
     width: calculate_em(($base-layout-unit * 2) + 500px, $base-font-size); }
   .layout-content__content--sidecontent {
