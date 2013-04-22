@@ -4,29 +4,29 @@
 
 !!! 5
 %head{:lang => "en"}
-  %meta{:charset => "utf-8"}
-  %title<
-    %tumblrblockDayPage> Posts From {DayOfMonth} {Month}, {Year} //&nbsp;
-    %tumblrblockTagPage> Posts Tagged With &ldquo;{Tag}&rdquo; //&nbsp;
-    %tumblrblockSearchPage> Search Results For &ldquo;{SearchQuery}&rdquo; //&nbsp;
-    %tumblrblockPostSummary> {PostSummary} //&nbsp;
-    {Title}
-  %tumblrblockDescription
-    %meta{:content => "{MetaDescription}", :name => "description"}
-  %meta{:content => "initial-scale=1.0,maximum-scale=1.0,user-scalable=no,width=device-width", :name => "viewport"}
   %link{:href => "{RSS}", :rel => "alternate", :type => "application/rss+xml"}
   %link{:href => "{PortraitURL-128}", :rel => "apple-touch-icon"}
   %link{:href => "{Favicon}", :rel => "shortcut icon"}
   %link{:href => "http://www.robotinaponcho.net/obtaincornhoop/style.css", :rel => "stylesheet"}
-  %script{:src => "http://use.typekit.com/gwe8uye.js"}
+  %meta{:charset => "utf-8"}
+  %tumblrblockDescription
+    %meta{:content => "{MetaDescription}", :name => "description"}
+  %meta{:content => "initial-scale=1.0,maximum-scale=1.0,user-scalable=no,width=device-width", :name => "viewport"}
+  %script{:src => "//use.typekit.com/gwe8uye.js"}
   %script try{Typekit.load();}catch(e){}
+  %title<
+    %tumblrblockDayPage> Posts From {DayOfMonth} {Month}, {Year} //&nbsp;
+    %tumblrblockPostSummary> {PostSummary} //&nbsp;
+    %tumblrblockSearchPage> Search Results For &ldquo;{SearchQuery}&rdquo; //&nbsp;
+    %tumblrblockTagPage> Posts Tagged With &ldquo;{Tag}&rdquo; //&nbsp;
+    {Title}
 %body
   %header.layout-siteheader
     .siteheader
       .siteheader__container
         .siteheader__container__sitetitle
           .sitetitle
-            %h1.sitetitle__mainheader {Title}
+            %h1.sitetitle__title {Title}
         .siteheader__container__sitenavigation
           %nav.navigation
             %ul.navigation__linklist
@@ -50,6 +50,10 @@
       %tumblrblockSearchPage
         .pagetitle
           %h2.pagetitle__title Search Results For &ldquo;<i>{SearchQuery}</i>&rdquo;
+      %tumblrblockNoSearchResults
+        %article.post
+          %section.postbody
+            %p Nothing :(
       %tumblrblockPosts
         %article.post
           %tumblrblockText
@@ -103,10 +107,6 @@
             %section.postnotes
               %a{:name => "notes"}
               {PostNotes}
-      %tumblrblockNoSearchResults
-        %article.post
-          %section.postbody
-            %p Nothing :(
       %tumblrblockPagination
         %nav.pagenavigation
           %div.navigation

@@ -175,7 +175,7 @@
       display: table; } } }
 
 .sitetitle {
-  .sitetitle__mainheader {
+  .sitetitle__title {
     $main-title-font-size: 36px;
     $main-title-line-height: 48px;
     font-size: calculate_percentage($main-title-font-size, $base-font-size);
