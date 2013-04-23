@@ -4,6 +4,15 @@
 // This file is distributed under the MIT licence. For more information,
 // please refer to the accompanying "LICENCE" file.
 
+// Produces declarations and rules that make up the clear-fix hack. See
+// <http://nicolasgallagher.com/micro-clearfix-hack/> for more information.
+@mixin clear-fix() {
+  *zoom: 1;
+  &:after, &:before {
+    clear: both;
+    content: " ";
+    display: table; } }
+
 // Produces declarations and rules for links where when a user hovers over a
 // link, the background and foreground colours are swapped. At the moment,
 // links that have already been visited are not differentiated.

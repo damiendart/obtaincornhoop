@@ -27,18 +27,17 @@
         .siteheader__container__sitetitle
           .sitetitle
             %h1.sitetitle__title {Title}
-        .siteheader__container__sitenavigation
-          %nav.navigation
-            %ul.navigation__linklist
-              %li.navigation__linklist__item>
-                %a{:class => "navigation__linklist__item__button", :href => "/"} Home
-              %li.navigation__linklist__item>
-                %a{:class => "navigation__linklist__item__button", :href => "/archive"} Archives
-              %li.navigation__linklist__item>
-                %a{:class => "navigation__linklist__item__button", :href => "/about"} About
-              %tumblrblockAskEnabled
-                %li.navigation__linklist__item>
-                  %a{:class => "navigation__linklist__item__button", :href => "/ask"} Ask
+        %nav.siteheader__container__sitenavigation
+          %ul.navigation-list
+            %li.navigation-list__item>
+              %a{:class => "navigation-list__item__button", :href => "/"} Home
+            %li.navigation-list__item>
+              %a{:class => "navigation-list__item__button", :href => "/archive"} Archives
+            %li.navigation-list__item>
+              %a{:class => "navigation-list__item__button", :href => "/about"} About
+            %tumblrblockAskEnabled
+              %li.navigation-list__item>
+                %a{:class => "navigation-list__item__button", :href => "/ask"} Ask
   %div.layout-content
     %section.layout-content__content.layout-content__content--maincontent
       %tumblrblockDayPage
@@ -109,21 +108,19 @@
               {PostNotes}
       %tumblrblockPagination
         %nav.pagenavigation
-          %div.navigation
-            %ul.navigation__linklist
-              %tumblrblockPreviousPage
-                %li.navigation__linklist__item.navigation__linklist__item--previouslink 
-                  %a{:class => "navigation__linklist__item__button", :href => "{PreviousPage}"} Newer posts
-              %tumblrblockNextPage
-                %li.navigation__linklist__item.navigation__linklist__item--nextlink
-                  %a{:class => "navigation__linklist__item__button", :href => "{NextPage}"} Older posts
+          %ul.navigation-list
+            %tumblrblockPreviousPage
+              %li.navigation-list__item.navigation-list__item--previous
+                %a{:class => "navigation-list__item__button", :href => "{PreviousPage}"} Newer posts
+            %tumblrblockNextPage
+              %li.navigation-list__item.navigation-list__item--next
+                %a{:class => "navigation-list__item__button", :href => "{NextPage}"} Older posts
       %tumblrblockDayPagination
         %nav.pagenavigation
-          %div.navigation
-            %ul.navigation__linklist
-              %tumblrblockPreviousDayPage
-                %li.navigation__linklist__item.navigation__linklist__item--previouslink 
-                  %a{:class => "navigation__linklist__item__button", :href => "{PreviousDayPage}"} {DayOfMonth} {Month}, {Year}
-              %tumblrblockNextDayPage
-                %li.navigation__linklist__item.navigation__linklist__item--nextlink
-                  %a{:class => "navigation__linklist__item__button", :href => "{NextDayPage}"} {DayOfMonth} {Month}, {Year}
+          %ul.navigation-list
+            %tumblrblockPreviousDayPage
+              %li.navigation-list__item.navigation-list__item--previous
+                %a{:class => "navigation-list__item__button", :href => "{PreviousDayPage}"} {DayOfMonth} {Month}, {Year}
+            %tumblrblockNextDayPage
+              %li.navigation-list__item.navigation-list__item--next
+                %a{:class => "navigation-list__item__button", :href => "{NextDayPage}"} {DayOfMonth} {Month}, {Year}

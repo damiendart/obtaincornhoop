@@ -8,36 +8,33 @@
 @import "mixins";
 @import "variables";
 
-.navigation {
-  .navigation__linklist {
-    list-style: none;
-    margin: calculate_em($base-layout-unit / -2, $base-font-size) 0
-        0 calculate_em($base-layout-unit / -2, $base-font-size);
-    padding: 0;
-    &:after {
-      clear: both;
-      content: "";
-      display: table; }
-    .navigation__linklist__item {
-      display: inline-block;
-      margin: 0 0 0 calculate_em($base-layout-unit / 2, $base-font-size);
-      padding: calculate_em($base-layout-unit / 2, $base-font-size) 0 0 0;
-      .navigation__linklist__item__button {
-        @include colour-swap-links($post-background-colour, $post-link-colour);
-        border-radius: calculate_em($base-layout-unit, $base-font-size);
-        display: inline-block;
-        font-weight: bold;
-        padding: calculate_em($base-layout-unit / 2, $base-font-size) 
-            calculate_em($base-layout-unit, $base-font-size); } }
-        text-transform: uppercase;
-    .navigation__linklist__item--previouslink {
-      float: left; }
-    .navigation__linklist__item--nextlink {
-      float: right; } } }
+/* ul */.navigation-list {
+  @include clear-fix;
+  list-style: none;
+  // Apply negative margins to negate list items' "gutters".
+  margin: calculate_em($base-layout-unit / -2, $base-font-size) 0
+      0 calculate_em($base-layout-unit / -2, $base-font-size);
+  padding-left: 0;
+   /* li */.navigation-list__item {
+    // Inline-block elements don't like whitespace between each other. See
+    // <http://css-tricks.com/fighting-the-space-between-inline-block-elements/>
+    // for more information.
+    display: inline-block;
+    margin: calculate_em($base-layout-unit / 2, $base-font-size) 0
+        0 calculate_em($base-layout-unit / 2, $base-font-size);
+    /* a */.navigation-list__item__button {
+      @include colour-swap-links($post-background-colour, $post-link-colour);
+      border-radius: calculate_em($base-layout-unit, $base-font-size);
+      display: block;
+      font-weight: bold;
+      padding: calculate_em($base-layout-unit / 2, $base-font-size)
+          calculate_em($base-layout-unit, $base-font-size); } }
+      text-transform: uppercase;
+  /* li */.navigation-list__item--previous {
+    float: left; }
+  /* li */.navigation-list__item--next {
+    float: right; } }
  
-.navigation--right {
-  float: right; }
-
 .postmetadata {
   background-color: $post-background-colour;
   color: $post-metadata-colour;
