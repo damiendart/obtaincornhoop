@@ -34,7 +34,7 @@
     float: left; }
   /* li */.navigation-list__item--next {
     float: right; } }
- 
+
 .postmetadata {
   background-color: $post-background-colour;
   color: $post-metadata-colour;
@@ -82,10 +82,10 @@
 .postnotes {
   background-color: $post-background-colour;
   @each $prefix in ("", "-moz-", "-webkit-") {
-    #{$prefix}box-shadow: inset 0 
-      calculate_em($base-layout-unit / 2, $base-font-size) 
-      calculate_em($base-layout-unit / 2, $base-font-size) 
-      calculate_em($base-layout-unit / -2, $base-font-size) 
+    #{$prefix}box-shadow: inset 0
+      calculate_em($base-layout-unit / 2, $base-font-size)
+      calculate_em($base-layout-unit / 2, $base-font-size)
+      calculate_em($base-layout-unit / -2, $base-font-size)
       darken($post-background-colour, 30); }
   color: $post-metadata-colour;
   margin: 0 calculate_em($base-layout-unit, $base-font-size);
@@ -131,7 +131,7 @@
   h1 {
     $heading-font-size: 24px;
     $heading-line-height: 36px;
-    font-size: calculate_percentage($heading-font-size, $base-font-size); 
+    font-size: calculate_percentage($heading-font-size, $base-font-size);
     line-height: calculate_em($heading-line-height, $heading-font-size);
     margin: 0 0 calculate_em($base-line-height / 2, $heading-font-size) 0; }
   p {
