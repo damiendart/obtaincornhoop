@@ -23,9 +23,3 @@
   .layout-content__content--sidecontent {
     margin: 0 0 0 calculate_em($base-layout-unit, $base-font-size);
     width: calculate_em(300px, $base-font-size); } }
-
-.layout-siteheader {
-  left: 0;
-  position: fixed;
-  top: 0;
-  width: 100%; }

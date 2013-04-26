@@ -152,7 +152,12 @@
 .siteheader {
   background-color: $post-colour;
   color: $post-background-colour;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
   .siteheader__container {
+    @include clear-fix;
     margin: 0 auto;
     padding: $base-layout-unit 0;
     // TODO: Remove poor-man's responsive layout bullshit.
@@ -165,19 +170,14 @@
     .siteheader__container__sitenavigation {
       // TODO: Remove poor-man's responsive layout bullshit.
       @media screen and (min-width: 872px) {
-      float: right; } }
-    &:after {
-      clear: both;
-      content: "";
-      display: table; } } }
+      float: right; } } } }
 
 .sitetitle {
-  .sitetitle__title {
-    $main-title-font-size: 36px;
-    $main-title-line-height: 48px;
-    font-size: calculate_percentage($main-title-font-size, $base-font-size);
-    line-height: calculate_em($main-title-line-height, $main-title-font-size);
-    margin: 0; } }
+  $main-title-font-size: 36px;
+  $main-title-line-height: 48px;
+  font-size: calculate_percentage($main-title-font-size, $base-font-size);
+  line-height: calculate_em($main-title-line-height, $main-title-font-size);
+  margin: 0; }
 
 .pagenavigation {
   margin: calculate_em($base-layout-unit, $base-font-size) auto 0 auto; }
