@@ -149,26 +149,26 @@
     & > * {
       @include reset-box-model; } } }
 
-.siteheader {
+/* header */.siteheader {
   background-color: $post-colour;
   color: $post-background-colour;
   left: 0;
   position: fixed;
   top: 0;
   width: 100%;
-  .siteheader__container {
+  /* div */.siteheader__container {
     @include clear-fix;
     margin: 0 auto;
     padding: $base-layout-unit 0;
-    // TODO: Remove poor-man's responsive layout bullshit.
+    // TODO: Remove magic numbers.
     @media screen and (min-width: 872px) {
       width: calculate_em(872px, $base-font-size); }
-    .siteheader__container__sitetitle {
-      // TODO: Remove poor-man's responsive layout bullshit.
+    /* div */.siteheader__container__sitetitle {
+      // TODO: Remove magic number.
       @media screen and (min-width: 872px) {
       float: left; } }
-    .siteheader__container__sitenavigation {
-      // TODO: Remove poor-man's responsive layout bullshit.
+    /* nav */.siteheader__container__sitenavigation {
+      // TODO: Remove magic number.
       @media screen and (min-width: 872px) {
       float: right; } } } }
 
