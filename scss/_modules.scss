@@ -172,25 +172,20 @@
       @media screen and (min-width: 872px) {
       float: right; } } } }
 
-.sitetitle {
-  $main-title-font-size: 36px;
-  $main-title-line-height: 48px;
-  font-size: calculate_percentage($main-title-font-size, $base-font-size);
-  line-height: calculate_em($main-title-line-height, $main-title-font-size);
+/* h1 */.sitetitle {
+  $site-title-font-size: 36px;
+  $site-title-line-height: 48px;
+  font-size: calculate_percentage($site-title-font-size, $base-font-size);
+  line-height: calculate_em($site-title-line-height, $site-title-font-size);
   margin: 0; }
 
-.pagenavigation {
+.pagenavigation, .post {
   margin: calculate_em($base-layout-unit, $base-font-size) auto 0 auto; }
 
-.pagetitle {
-  margin: calculate_em($base-layout-unit, $base-font-size) auto 0 auto;
-  .pagetitle__title {
-    $sub-title-font-size: 30px;
-    $sub-title-line-height: 36px;
-    font-size: calculate_percentage($sub-title-font-size, $base-font-size);
-    line-height: calculate_em($sub-title-line-height, $sub-title-font-size);
-    margin: 0;
-    text-align: center; } }
-
-.post {
-  margin: calculate_em($base-layout-unit, $base-font-size) auto 0 auto; }
+/* h2 */.pagetitle {
+  $page-title-font-size: 30px;
+  $page-title-line-height: 36px;
+  font-size: calculate_percentage($page-title-font-size, $base-font-size);
+  line-height: calculate_em($page-title-line-height, $page-title-font-size);
+  margin: calculate_em($base-layout-unit, $page-title-font-size) auto 0 auto;
+  text-align: center; }
