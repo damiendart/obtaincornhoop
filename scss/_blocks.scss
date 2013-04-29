@@ -1,4 +1,4 @@
-// Module rules for Obtain Corn Hoop.
+// BEM-style block rules for Obtain Corn Hoop.
 //
 // Copyright (C) 2013 Damien Dart, <damiendart@pobox.com>.
 // This file is distributed under the MIT licence. For more information,
@@ -7,6 +7,26 @@
 @import "functions";
 @import "mixins";
 @import "variables";
+
+/* div */.content {
+  margin: 0 auto;
+  // TODO: Remove poor-man's responsive layout bullshit.
+  @media screen and (min-width: 872px) {
+    width: calculate_em(872px, $base-font-size); }
+  // Don't wrap all the content in a "section" element, see
+  // <http://html5doctor.com/the-section-element/> for more information.
+  /* div */.content__column {
+    // The use of "inline-block" means that there cannot be any whitespace
+    // between the main and side column elements.
+    display: inline-block;
+    vertical-align: top;
+    /* div, article, nav, etc. */.content__column__block {
+      margin: calculate_em($base-layout-unit, $base-font-size) 0 0 0; } }
+  /* div */.content__column--maincolumn {
+    width: calculate_em(($base-layout-unit * 2) + 500px, $base-font-size); }
+  /* div */.content__column--sidecolumn {
+    margin: 0 0 0 calculate_em($base-layout-unit, $base-font-size);
+    width: calculate_em(300px, $base-font-size); } }
 
 /* ul */.navigation-list {
   @include clear-fix;
@@ -179,13 +199,10 @@
   line-height: calculate_em($site-title-line-height, $site-title-font-size);
   margin: 0; }
 
-.pagenavigation, .post {
-  margin: calculate_em($base-layout-unit, $base-font-size) auto 0 auto; }
-
 /* h2 */.pagetitle {
   $page-title-font-size: 30px;
   $page-title-line-height: 36px;
   font-size: calculate_percentage($page-title-font-size, $base-font-size);
   line-height: calculate_em($page-title-line-height, $page-title-font-size);
-  margin: calculate_em($base-layout-unit, $page-title-font-size) auto 0 auto;
+  margin: 0;
   text-align: center; }
