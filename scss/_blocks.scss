@@ -22,9 +22,9 @@
     vertical-align: top;
     /* div, article, nav, etc. */.content__column__block {
       margin: calculate_em($base-layout-unit, $base-font-size) 0 0 0; } }
-  /* div */.content__column--maincolumn {
+  /* div */.content__column--main-column {
     width: calculate_em(($base-layout-unit * 2) + 500px, $base-font-size); }
-  /* div */.content__column--sidecolumn {
+  /* div */.content__column--side-column {
     margin: 0 0 0 calculate_em($base-layout-unit, $base-font-size);
     width: calculate_em(300px, $base-font-size); } }
 
@@ -169,37 +169,37 @@
     & > * {
       @include reset-box-model; } } }
 
-/* header */.siteheader {
+/* header */.site-header {
   background-color: $post-colour;
   color: $post-background-colour;
   left: 0;
   position: fixed;
   top: 0;
   width: 100%;
-  /* div */.siteheader__container {
+  /* div */.site-header__container {
     @include clear-fix;
     margin: 0 auto;
     padding: $base-layout-unit 0;
     // TODO: Remove magic numbers.
     @media screen and (min-width: 872px) {
       width: calculate_em(872px, $base-font-size); }
-    /* div */.siteheader__container__sitetitle {
+    /* div */.site-header__container__site-title {
       // TODO: Remove magic number.
       @media screen and (min-width: 872px) {
       float: left; } }
-    /* nav */.siteheader__container__sitenavigation {
+    /* nav */.site-header__container__site-navigation {
       // TODO: Remove magic number.
       @media screen and (min-width: 872px) {
       float: right; } } } }
 
-/* h1 */.sitetitle {
+/* h1 */.site-title {
   $site-title-font-size: 36px;
   $site-title-line-height: 48px;
   font-size: calculate_percentage($site-title-font-size, $base-font-size);
   line-height: calculate_em($site-title-line-height, $site-title-font-size);
   margin: 0; }
 
-/* h2 */.pagetitle {
+/* h2 */.page-title {
   $page-title-font-size: 30px;
   $page-title-line-height: 36px;
   font-size: calculate_percentage($page-title-font-size, $base-font-size);
