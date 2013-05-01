@@ -78,27 +78,27 @@
               \{Video-500}
               %tumblrblockCaption {Caption}
           %tumblrblockDate
-            %section.postmetadata
-              %ul.postmetadata__metadatalist
+            %section.post-metadata
+              %ul.post-metadata__metadata-list
                 %tumblrblockReblog
-                  %li.postmetadata__metadatalist__item.postmetadata__metadatalist__item--date
+                  %li.post-metadata__metadata-list__item.post-metadata__metadata-list__item--date
                     <a href="{Permalink}">Reblogged {TimeAgo}</a> from {ReblogParentName}
                 %tumblrblockNotReblog
-                  %li.postmetadata__metadatalist__item.postmetadata__metadatalist__item--date
+                  %li.post-metadata__metadata-list__item.post-metadata__metadata-list__item--date
                     <a href="{Permalink}">Posted {TimeAgo}</a>
                 %tumblrblockContentSource
-                  %li.postmetadata__metadatalist__item.postmetadata__metadatalist__item--source
+                  %li.post-metadata__metadata-list__item.post-metadata__metadata-list__item--source
                     Source: <a href="{SourceURL}">{SourceTitle}</a>
                 %tumblrblockHasTags
-                  %li.postmetadata__metadatalist__item.postmetadata__metadatalist__item--tags
+                  %li.post-metadata__metadata-list__item.post-metadata__metadata-list__item--tags
                     Tagged with:
-                    %ul.postmetadata__metadatalist__item--tags__taglist
+                    %ul.tag-list
                       %tumblrblockTags
-                        %li.postmetadata__metadatalist__item--tags__taglist__item<
+                        %li.tag-list__item<
                           %a{:href => "{TagURL}"} {Tag}
                 %tumblrblockIndexPage
                   %tumblrblockNoteCount
-                    %li.postmetadata__metadatalist__item.postmetadata__metadatalist__item--notes
+                    %li.post-metadata__metadata-list__item.post-metadata__metadata-list__item--notes
                       This post has <a href="{Permalink}#notes">{NoteCountWithLabel}</a>
           %tumblrblockPostNotes
             %section.postnotes
