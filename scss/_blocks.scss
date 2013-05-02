@@ -28,6 +28,33 @@
     margin: 0 0 0 calculate_em($base-layout-unit, $base-font-size);
     width: calculate_em(300px, $base-font-size); } }
 
+/* ul */.metadata-list {
+  list-style: none;
+  margin: 0;
+  text-align: left;
+  padding: 0;
+  /* li */.metadata-list__item {
+    font-style: italic;
+    margin: 0 0 0 calculate_em($base-layout-unit, $base-font-size);
+    text-indent: calculate_em($base-layout-unit * -1, $base-font-size);
+    &:before {
+      // Adjust the font size and line height slighly to make the icon
+      // glyphs align better with any adjacent text.
+      $font-size: $base-font-size * 0.75;
+      $line-height: $base-line-height * 1.2;
+      float: left;
+      font-family: "Glyphicons Halflings";
+      font-size: calculate_percentage($font-size, $base-font-size);
+      height: calculate_em($base-line-height, $font-size);
+      line-height: calculate_em($line-height, $font-size);
+      speak: none; // TODO: Check whether this is necessary.
+      width: calculate_em($base-line-height, $font-size); } }
+  @each $type in (("date", "\e023"), ("notes", "\e005"),
+      ("source", "\e087"), ("tags", "\e042")) {
+    /* li */.metadata-list__item--#{nth($type, 1)} {
+      &:before {
+        content: "#{nth($type, 2)}"; } } } }
+
 /* ul */.navigation-list {
   @include clear-fix;
   list-style: none;
@@ -99,33 +126,7 @@
       calculate_em($base-layout-unit, $base-font-size)
       calculate_em($base-layout-unit, $base-font-size);
   a {
-    @include colour-swap-links($background-colour, $foreground-colour); }
-  /* ul */.post-metadata__metadata-list {
-    list-style: none;
-    margin: 0;
-    text-align: left;
-    padding: 0;
-    /* li */.post-metadata__metadata-list__item {
-      font-style: italic;
-      margin: 0 0 0 calculate_em($base-layout-unit, $base-font-size);
-      text-indent: calculate_em($base-layout-unit * -1, $base-font-size);
-      &:before {
-        // Adjust the font size and line height slighly to make the icon
-        // glyphs align better with any adjacent text.
-        $font-size: $base-font-size * 0.75;
-        $line-height: $base-line-height * 1.2;
-        float: left;
-        font-family: "Glyphicons Halflings";
-        font-size: calculate_percentage($font-size, $base-font-size);
-        height: calculate_em($base-line-height, $font-size);
-        line-height: calculate_em($line-height, $font-size);
-        speak: none; // TODO: Check whether this is necessary.
-        width: calculate_em($base-line-height, $font-size); } }
-    @each $type in (("date", "\e023"), ("notes", "\e005"),
-        ("source", "\e087"), ("tags", "\e042")) {
-      /* li */.post-metadata__metadata-list__item--#{nth($type, 1)} {
-        &:before {
-          content: "#{nth($type, 2)}"; } } } } }
+    @include colour-swap-links($background-colour, $foreground-colour); } }
 
 /* section */.post-comments {
   $background-colour: #ffffff;
@@ -144,7 +145,7 @@
   a {
     @include colour-swap-links($background-colour, $foreground-colour); } }
 
-.postbody {
+/* section */.postbody {
   background-color: $post-background-colour;
   color: $post-colour;
   padding: calculate_em($base-layout-unit, $base-font-size);

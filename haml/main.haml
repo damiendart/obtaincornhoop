@@ -79,18 +79,18 @@
               %tumblrblockCaption {Caption}
           %tumblrblockDate
             %section.post-metadata
-              %ul.post-metadata__metadata-list
+              %ul.metadata-list
                 %tumblrblockReblog
-                  %li.post-metadata__metadata-list__item.post-metadata__metadata-list__item--date
+                  %li.metadata-list__item.metadata-list__item--date
                     <a href="{Permalink}">Reblogged {TimeAgo}</a> from {ReblogParentName}
                 %tumblrblockNotReblog
-                  %li.post-metadata__metadata-list__item.post-metadata__metadata-list__item--date
+                  %li.metadata-list__item.metadata-list__item--date
                     <a href="{Permalink}">Posted {TimeAgo}</a>
                 %tumblrblockContentSource
-                  %li.post-metadata__metadata-list__item.post-metadata__metadata-list__item--source
+                  %li.metadata-list__item.metadata-list__item--source
                     Source: <a href="{SourceURL}">{SourceTitle}</a>
                 %tumblrblockHasTags
-                  %li.post-metadata__metadata-list__item.post-metadata__metadata-list__item--tags
+                  %li.metadata-list__item.metadata-list__item--tags
                     Tagged with:
                     %ul.tag-list
                       %tumblrblockTags
@@ -98,7 +98,7 @@
                           %a{:href => "{TagURL}"} {Tag}
                 %tumblrblockIndexPage
                   %tumblrblockNoteCount
-                    %li.post-metadata__metadata-list__item.post-metadata__metadata-list__item--notes
+                    %li.metadata-list__item.metadata-list__item--notes
                       This post has <a href="{Permalink}#notes">{NoteCountWithLabel}</a>
           %tumblrblockPostNotes
             %section.post-notes
