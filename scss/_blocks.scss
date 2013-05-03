@@ -145,13 +145,15 @@
   a {
     @include colour-swap-links($background-colour, $foreground-colour); } }
 
-/* section */.postbody {
-  background-color: $post-background-colour;
-  color: $post-colour;
+/* section */.post-body {
+  $background-colour: #ffffff;
+  $foreground-colour: #000000;
+  background-color: $background-colour;
+  color: $foreground-colour;
   padding: calculate_em($base-layout-unit, $base-font-size);
   text-align: left;
   a {
-    @include colour-swap-links($post-background-colour, $post-link-colour); }
+    @include colour-swap-links($background-colour, $foreground-colour); }
   blockquote {
     margin: calculate_em($base-line-height / 2, $base-font-size) 0 0 0;
     padding: 0 0 0 calculate_em($base-line-height, $base-font-size); }
@@ -174,7 +176,8 @@
         0 calculate_em($base-line-height, $base-font-size);
     padding: 0;
     & > * {
-      @include reset-box-model; } } }
+      margin: 0;
+      padding: 0; } } }
 
 /* header */.site-header {
   background-color: $post-colour;
