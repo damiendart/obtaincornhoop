@@ -7,3 +7,6 @@
 $base-font-size: 16px;
 $base-line-height: 24px;
 $base-layout-unit: $base-line-height;
+// The value in this breakpoint is from Twitter's Bootstrap project:
+// <http://twitter.github.io/bootstrap/scaffolding.html#responsive>.
+$small-screen-breakpoint: "max-width: 767px";

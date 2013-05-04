@@ -9,24 +9,54 @@
 @import "mixins";
 
 /* div */.content {
-  margin: 0 auto;
-  // TODO: Remove poor-man's responsive layout bullshit.
-  @media screen and (min-width: 872px) {
-    width: calculate_em(872px, $base-font-size); }
-  // Don't wrap all the content in a "section" element, see
+  $main-content-width: 500px + ($base-layout-unit * 2);
+  $side-content-width: 300px;
+  $total-content-width: $base-layout-unit +
+      $main-content-width + $side-content-width;
+  margin: calculate_em($base-layout-unit * 4, $base-font-size) auto
+      calculate_em($base-layout-unit, $base-font-size) auto;
+  width: calculate_em($total-content-width, $base-font-size);
+  @media screen and (max-width:
+      calculate_em($total-content-width, $base-font-size)) {
+    // Change the top margin to account for the new height of the site header
+    // when it collapses vertically.
+    margin-top: calculate_em(($base-layout-unit * 4) + 48px, $base-font-size);
+    width: 100%; }
+  // Remove the top margin to account for the site header becoming static for
+  // devices with smaller screens.
+  @media screen and ($small-screen-breakpoint) {
+    margin-top: 0; }
+  @media screen and (max-width: calculate_em(
+      $main-content-width + $base-layout-unit, $base-font-size)) {
+    margin-bottom: calculate_em($base-layout-unit / 2, $base-font-size); } 
+  // Don't use a "section" element, because semantics blah blah blah. See
   // <http://html5doctor.com/the-section-element/> for more information.
   /* div */.content__column {
-    // The use of "inline-block" means that there cannot be any whitespace
-    // between the main and side column elements.
+    // Using "inline-block" means there can't any whitespace between columns.
     display: inline-block;
     vertical-align: top;
     /* div, article, nav, etc. */.content__column__block {
-      margin: calculate_em($base-layout-unit, $base-font-size) 0 0 0; } }
+      margin: calculate_em($base-layout-unit, $base-font-size) 0 0 0;
+      @media screen and (max-width: calculate_em(
+          $main-content-width + $base-layout-unit, $base-font-size)) {
+        margin-top: calculate_em($base-layout-unit / 2, $base-font-size); } } }
+  // Don't use a "section" element, because semantics blah blah blah. See
+  // <http://html5doctor.com/the-section-element/> for more information.
   /* div */.content__column--main-column {
-    width: calculate_em(($base-layout-unit * 2) + 500px, $base-font-size); }
+    width: calculate_em($main-content-width, $base-font-size);
+    @media screen and (max-width: calculate_em(
+        $main-content-width + $base-layout-unit, $base-font-size)) {
+      // Setting the margin makes the content too wide for small screens;
+      // however, changing the "box-sizing" property and setting the padding
+      // does the trick, for some reason.
+      box-sizing: border-box;
+      padding: 0 calculate_em($base-layout-unit / 2, $base-font-size);
+      width: 100%; } }
+  // Don't use a "section" element, because semantics blah blah blah. See
+  // <http://html5doctor.com/the-section-element/> for more information.
   /* div */.content__column--side-column {
     margin: 0 0 0 calculate_em($base-layout-unit, $base-font-size);
-    width: calculate_em(300px, $base-font-size); } }
+    width: calculate_em($side-content-width, $base-font-size); } }
 
 /* ul */.metadata-list {
   list-style: none;
@@ -184,26 +214,32 @@
 /* header */.site-header {
   $background-colour: #000000;
   $foreground-colour: #ffffff;
+  $site-header-width: 800px + ($base-layout-unit * 3);
   background-color: $background-colour;
   color: $foreground-colour;
   left: 0;
   position: fixed;
   top: 0;
   width: 100%;
+  @media screen and ($small-screen-breakpoint) {
+    // We don't have the luxury of screen space on devices with smaller
+    // screens, so make the site header static.
+    position: static; }
   /* div */.site-header__container {
     @include clear-fix;
     margin: 0 auto;
     padding: $base-layout-unit 0;
-    // TODO: Remove magic numbers.
-    @media screen and (min-width: 872px) {
-      width: calculate_em(872px, $base-font-size); }
+    width: calculate_em($site-header-width, $base-font-size);
+    @media screen and (max-width:
+        calculate_em($site-header-width, $base-font-size)) {
+      width: 100%; }
     /* div */.site-header__container__site-title {
-      // TODO: Remove magic number.
-      @media screen and (min-width: 872px) {
+      @media screen and (min-width:
+          calculate_em($site-header-width, $base-font-size)) {
       float: left; } }
     /* nav */.site-header__container__site-navigation {
-      // TODO: Remove magic number.
-      @media screen and (min-width: 872px) {
+      @media screen and (min-width:
+          calculate_em($site-header-width, $base-font-size)) {
       float: right; } } } }
 
 /* h1 */.site-title {
