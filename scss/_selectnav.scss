@@ -7,12 +7,12 @@
 @import "global-variables";
 
 .selectnav {
-	display: none; }
+  display: none; }
 
 @media screen and ($small-screen-breakpoint) {
-	.js {
+  .js {
     #selectnav {
-    	display: none; }
+      display: none; }
     .selectnav {
-    	display: block; 
-    	margin: 0 auto; } } }
+      display: block;
+      margin: 0 auto; } } }
