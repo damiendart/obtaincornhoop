@@ -28,7 +28,7 @@
     margin-top: 0; }
   @media screen and (max-width: calculate_em(
       $main-content-width + $base-layout-unit, $base-font-size)) {
-    margin-bottom: calculate_em($base-layout-unit / 2, $base-font-size); } 
+    margin-bottom: calculate_em($base-layout-unit / 2, $base-font-size); }
   // Don't use a "section" element, because semantics blah blah blah. See
   // <http://html5doctor.com/the-section-element/> for more information.
   /* div */.content__column {
