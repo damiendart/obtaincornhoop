@@ -12,6 +12,7 @@
   %tumblrblockDescription
     %meta{:content => "{MetaDescription}", :name => "description"}
   %meta{:content => "initial-scale=1.0,maximum-scale=1.0,user-scalable=no,width=device-width", :name => "viewport"}
+  %script{:src => "//www.robotinaponcho.net/obtaincornhoop/selectnav.min.js"}
   %script{:src => "//use.typekit.com/gwe8uye.js"}
   %script try{Typekit.load();}catch(e){}
   %title<
@@ -26,7 +27,7 @@
       .site-header__container__site-title
         %h1.site-title {Title}
       %nav.site-header__container__site-navigation
-        %ul.navigation-list
+        %ul#selectnav.navigation-list
           %li.navigation-list__item>
             %a{:class => "navigation-list__item__button", :href => "/"} Home
           %li.navigation-list__item>
@@ -122,3 +123,4 @@
             %tumblrblockNextDayPage
               %li.navigation-list__item.navigation-list__item--next
                 %a{:class => "navigation-list__item__button", :href => "{NextDayPage}"} {DayOfMonth} {Month}, {Year}
+%script selectnav("selectnav", { autoselect: false, label: "&#x2605;&#x2605;&#x2605; NAVIGATION &#x2605;&#x2605;&#x2605;" });
