@@ -247,7 +247,16 @@
   $site-title-line-height: 48px;
   font-size: calculate_percentage($site-title-font-size, $base-font-size);
   line-height: calculate_em($site-title-line-height, $site-title-font-size);
-  margin: 0; }
+  margin: 0;
+  .site-title__link {
+    $background-colour: #000000;
+    $foreground-colour: #ffffff;
+    background-color: $background-colour;
+    color: $foreground-colour;
+    text-decoration: none;
+    &:active, &:focus, &:hover, &:visited, &:visited:hover {
+      background-color: $background-colour;
+      color: $foreground-colour; } } }
 
 /* ul */.tag-list {
   display: inline;
