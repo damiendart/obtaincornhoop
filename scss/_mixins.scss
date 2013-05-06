@@ -26,9 +26,3 @@
     // TODO: Make visited links a little different from other links?
     background: $background-colour;
     color: $foreground-colour; } }
-
-// Produces declarations that reset the box-model measurements. See also
-// <http://reference.sitepoint.com/css/boxmodel>.
-@mixin reset-box-model() {
-  @each $property in ("border", "margin", "padding") {
-    #{$property}: 0; } }
