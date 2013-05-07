@@ -153,6 +153,8 @@
   $background-colour: #ffffff;
   $foreground-colour: lighten(#000000, 75);
   background-color: $background-colour;
+  border-radius: 0 0 calculate_em($base-layout-unit / 4, $base-font-size)
+      calculate_em($base-layout-unit / 4, $base-font-size);
   color: $foreground-colour;
   padding: 0 calculate_em($base-layout-unit, $base-font-size)
       calculate_em($base-layout-unit, $base-font-size)
@@ -181,9 +183,13 @@
   $background-colour: #ffffff;
   $foreground-colour: #000000;
   background-color: $background-colour;
+  border-radius: calculate_em($base-layout-unit / 4, $base-font-size);
   color: $foreground-colour;
   padding: calculate_em($base-layout-unit, $base-font-size);
   text-align: left;
+  &:not(:only-child) {
+    border-radius: calculate_em($base-layout-unit / 4, $base-font-size) 
+        calculate_em($base-layout-unit / 4, $base-font-size) 0 0; }
   a {
     @include colour-swap-links($background-colour, $foreground-colour); }
   blockquote {
