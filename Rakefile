@@ -19,7 +19,7 @@ desc "Spit out the Obtain Corn Hoop stylesheet."
 file "style.css" => Dir.glob(File.join("scss" ,"*")) do |task|
   puts "# Spitting out \"" + task.name + "\"."
   output = Sass::Engine.for_file(File.join("scss", "main.scss"),
-      {:cache => false, :style => :compact, :syntax => :scss}).render
+      {:cache => false, :style => :compressed, :syntax => :scss}).render
   output.gsub!(/^[\s]*$\n/, "") # Remove empty lines.
   File.open(task.name, "w") do |file|
     file.write(output)
