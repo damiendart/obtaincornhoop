@@ -150,14 +150,13 @@
       display: none; } } }
 
 /* section */.post-metadata {
-  $background-colour: #ffffff;
+  $background-colour: darken(#ffffff, 10.5);
   $foreground-colour: lighten(#000000, 75);
   background-color: $background-colour;
   border-radius: 0 0 calculate_em($base-layout-unit / 4, $base-font-size)
       calculate_em($base-layout-unit / 4, $base-font-size);
   color: $foreground-colour;
-  padding: 0 calculate_em($base-layout-unit, $base-font-size)
-      calculate_em($base-layout-unit, $base-font-size)
+  padding: calculate_em($base-layout-unit / 2, $base-font-size)
       calculate_em($base-layout-unit, $base-font-size);
   a {
     @include colour-swap-links($background-colour, $foreground-colour); } }
