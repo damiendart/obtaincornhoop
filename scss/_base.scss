@@ -12,13 +12,10 @@
   $font-folder: "http://www.robotinaponcho.net/obtaincornhoop/";
   $font-basename: "glyphiconshalflings-regular";
   font-family: "Glyphicons Halflings";
-  src: url("#{$font-folder}#{$font-basename}.eot");
-  src: url("#{$font-folder}#{$font-basename}.eot?#iefix")
-      format("embedded-opentype");
-  src: url("#{$font-folder}#{$font-basename}.woff") format("woff");
-  src: url("#{$font-folder}#{$font-basename}.ttf") format("truetype");
-  src: url("#{$font-folder}#{$font-basename}.svg#glyphicons_halflingsregular")
-      format("svg"); }
+  @each $font-type in (("eot?iefix", "embedded-opentype"), ("woff", "woff"),
+      ("ttf", "truetype"), ("svg#glyphicons_halflingsregular", "svg")) {
+  src: url("#{$font-folder}#{$font-basename}.#{nth($font-type, 1)}")
+      format("#{nth($font-type, 2)}"); } }
 
 article, hgroup, nav, section {
   // Let older browsers in on the HTML5 fun. For more information, see
