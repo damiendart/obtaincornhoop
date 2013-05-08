@@ -150,8 +150,8 @@
       display: none; } } }
 
 /* section */.post-metadata {
-  $background-colour: darken(#ffffff, 10.5);
-  $foreground-colour: lighten(#000000, 75);
+  $background-colour: darken(#ffffff, 7.5);
+  $foreground-colour: lighten(#000000, 70);
   background-color: $background-colour;
   border-radius: 0 0 calculate_em($base-layout-unit / 4, $base-font-size)
       calculate_em($base-layout-unit / 4, $base-font-size);
