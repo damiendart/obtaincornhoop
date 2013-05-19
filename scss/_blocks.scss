@@ -16,6 +16,7 @@
   width: calculate_em($content-width, $base-font-size);
   @media screen and (max-width:
       calculate_em($content-width, $base-font-size)) {
+    margin: calculate_em($base-layout-unit / 2, $base-font-size) auto;
     width: 100%; }
   /* div, article, nav, etc. */.content__block {
     margin: calculate_em($base-layout-unit, $base-font-size) 0 0 0;
@@ -195,6 +196,10 @@
   font-size: calculate_percentage($site-title-font-size, $base-font-size);
   line-height: calculate_em($site-title-line-height, $site-title-font-size);
   margin: 0;
+  @media screen and ($small-screen-breakpoint) {
+    $small-screen-font-size: 36px;
+    font-size: calculate_percentage($small-screen-font-size, $base-font-size);
+    line-height: calculate_em($small-screen-font-size, $small-screen-font-size); }
   .site-title__link {
     $background-colour: transparent;
     $foreground-colour: #ffffff;
