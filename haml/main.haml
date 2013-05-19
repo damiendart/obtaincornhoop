@@ -38,93 +38,92 @@
           %li.navigation-list__item>
             %a.navigation-list__item__button{:href => "/ask"} Ask
   %div.content
-    %div.content__column.content__column--main-column
-      %tumblrblockDayPage
-        %div.content__column__block
-          %h2.page-title Posts from {DayOfMonth} {Month}, {Year}
-      %tumblrblockTagPage
-        %div.content__column__block
-          %h2.page-title Posts Tagged With &ldquo;<i>{Tag}</i>&rdquo;
-      %tumblrblockSearchPage
-        %div.content__column__block
-          %h2.page-title Search Results For &ldquo;<i>{SearchQuery}</i>&rdquo;
-      %tumblrblockNoSearchResults
-        %article.content__column__block
+    %tumblrblockDayPage
+      %div.content__block
+        %h2.page-title Posts from {DayOfMonth} {Month}, {Year}
+    %tumblrblockTagPage
+      %div.content__block
+        %h2.page-title Posts Tagged With &ldquo;<i>{Tag}</i>&rdquo;
+    %tumblrblockSearchPage
+      %div.content__block
+        %h2.page-title Search Results For &ldquo;<i>{SearchQuery}</i>&rdquo;
+    %tumblrblockNoSearchResults
+      %article.content__block
+        %section.post-body
+          %p Nothing :(
+    %tumblrblockPosts
+      %article.content__block
+        %tumblrblockText
           %section.post-body
-            %p Nothing :(
-      %tumblrblockPosts
-        %article.content__column__block
-          %tumblrblockText
-            %section.post-body
-              %tumblrblockTitle
-                %h1 {Title}
-              {Body}
-          %tumblrblockPhotoset
-            %section.post-body
-              \{Photoset-500}
-              %tumblrblockCaption {Caption}
-          %tumblrblockPhoto
-            %section.post-body
-              \{LinkOpenTag}
-              %img.main{:alt => "{PhotoAlt}", :src => "{PhotoURL-500}"}>
-              \{LinkCloseTag}
-              %tumblrblockCaption {Caption}
-          %tumblrblockQuote
-            %section.post-body
-              %p <q>{Quote}</q>
-              %tumblrblockSource
-                %p.quote-attribution &mdash; {Source}
-          %tumblrblockAudio
-            %section.post-body
-              \{AudioEmbed-500}
-              %tumblrblockCaption {Caption}
-          %tumblrblockVideo
-            %section.post-body
-              \{Video-500}
-              %tumblrblockCaption {Caption}
-          %tumblrblockDate
-            %section.post-metadata
-              %ul.metadata-list
-                %tumblrblockReblog
-                  %li.metadata-list__item.metadata-list__item--date
-                    <a href="{Permalink}">Reblogged {TimeAgo}</a> from {ReblogParentName}
-                %tumblrblockNotReblog
-                  %li.metadata-list__item.metadata-list__item--date
-                    <a href="{Permalink}">Posted {TimeAgo}</a>
-                %tumblrblockContentSource
-                  %li.metadata-list__item.metadata-list__item--source
-                    Source: <a href="{SourceURL}">{SourceTitle}</a>
-                %tumblrblockHasTags
-                  %li.metadata-list__item.metadata-list__item--tags
-                    Tagged with:
-                    %ul.tag-list
-                      %tumblrblockTags
-                        %li.tag-list__item<
-                          %a{:href => "{TagURL}"} {Tag}
-                %tumblrblockIndexPage
-                  %tumblrblockNoteCount
-                    %li.metadata-list__item.metadata-list__item--notes
-                      This post has <a href="{Permalink}#notes">{NoteCountWithLabel}</a>
-          %tumblrblockPostNotes
-            %section.post-comments
-              %a{:name => "notes"}
-              {PostNotes}
-      %tumblrblockPagination
-        %nav.content__column__block
-          %ul.navigation-list
-            %tumblrblockPreviousPage
-              %li.navigation-list__item.navigation-list__item--previous
-                %a{:class => "navigation-list__item__button", :href => "{PreviousPage}"} Newer posts
-            %tumblrblockNextPage
-              %li.navigation-list__item.navigation-list__item--next
-                %a{:class => "navigation-list__item__button", :href => "{NextPage}"} Older posts
-      %tumblrblockDayPagination
-        %nav.content__column__block
-          %ul.navigation-list
-            %tumblrblockPreviousDayPage
-              %li.navigation-list__item.navigation-list__item--previous
-                %a{:class => "navigation-list__item__button", :href => "{PreviousDayPage}"} {DayOfMonth} {Month}, {Year}
-            %tumblrblockNextDayPage
-              %li.navigation-list__item.navigation-list__item--next
-                %a{:class => "navigation-list__item__button", :href => "{NextDayPage}"} {DayOfMonth} {Month}, {Year}
+            %tumblrblockTitle
+              %h1 {Title}
+            {Body}
+        %tumblrblockPhotoset
+          %section.post-body
+            \{Photoset-500}
+            %tumblrblockCaption {Caption}
+        %tumblrblockPhoto
+          %section.post-body
+            \{LinkOpenTag}
+            %img.main{:alt => "{PhotoAlt}", :src => "{PhotoURL-500}"}>
+            \{LinkCloseTag}
+            %tumblrblockCaption {Caption}
+        %tumblrblockQuote
+          %section.post-body
+            %p <q>{Quote}</q>
+            %tumblrblockSource
+              %p.quote-attribution &mdash; {Source}
+        %tumblrblockAudio
+          %section.post-body
+            \{AudioEmbed-500}
+            %tumblrblockCaption {Caption}
+        %tumblrblockVideo
+          %section.post-body
+            \{Video-500}
+            %tumblrblockCaption {Caption}
+        %tumblrblockDate
+          %section.post-metadata
+            %ul.metadata-list
+              %tumblrblockReblog
+                %li.metadata-list__item.metadata-list__item--date
+                  <a href="{Permalink}">Reblogged {TimeAgo}</a> from {ReblogParentName}
+              %tumblrblockNotReblog
+                %li.metadata-list__item.metadata-list__item--date
+                  <a href="{Permalink}">Posted {TimeAgo}</a>
+              %tumblrblockContentSource
+                %li.metadata-list__item.metadata-list__item--source
+                  Source: <a href="{SourceURL}">{SourceTitle}</a>
+              %tumblrblockHasTags
+                %li.metadata-list__item.metadata-list__item--tags
+                  Tagged with:
+                  %ul.tag-list
+                    %tumblrblockTags
+                      %li.tag-list__item<
+                        %a{:href => "{TagURL}"} {Tag}
+              %tumblrblockIndexPage
+                %tumblrblockNoteCount
+                  %li.metadata-list__item.metadata-list__item--notes
+                    This post has <a href="{Permalink}#notes">{NoteCountWithLabel}</a>
+        %tumblrblockPostNotes
+          %section.post-comments
+            %a{:name => "notes"}
+            {PostNotes}
+    %tumblrblockPagination
+      %nav.content__block
+        %ul.navigation-list
+          %tumblrblockPreviousPage
+            %li.navigation-list__item.navigation-list__item--previous
+              %a{:class => "navigation-list__item__button", :href => "{PreviousPage}"} Newer posts
+          %tumblrblockNextPage
+            %li.navigation-list__item.navigation-list__item--next
+              %a{:class => "navigation-list__item__button", :href => "{NextPage}"} Older posts
+    %tumblrblockDayPagination
+      %nav.content__block
+        %ul.navigation-list
+          %tumblrblockPreviousDayPage
+            %li.navigation-list__item.navigation-list__item--previous
+              %a{:class => "navigation-list__item__button", :href => "{PreviousDayPage}"} {DayOfMonth} {Month}, {Year}
+          %tumblrblockNextDayPage
+            %li.navigation-list__item.navigation-list__item--next
+              %a{:class => "navigation-list__item__button", :href => "{NextDayPage}"} {DayOfMonth} {Month}, {Year}
 %script selectnav("selectnav", { autoselect: false, label: "&#x2605;&#x2605;&#x2605; NAVIGATION &#x2605;&#x2605;&#x2605;" });

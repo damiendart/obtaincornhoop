@@ -8,55 +8,21 @@
 @import "global-variables";
 @import "mixins";
 
+// Don't use a "section" element, because semantics blah blah blah. See
+// <http://html5doctor.com/the-section-element/> for more information.
 /* div */.content {
-  $main-content-width: 500px + ($base-layout-unit * 2);
-  $side-content-width: 300px;
-  $total-content-width: $base-layout-unit +
-      $main-content-width + $side-content-width;
-  margin: calculate_em($base-layout-unit * 4, $base-font-size) auto
-      calculate_em($base-layout-unit, $base-font-size) auto;
-  width: calculate_em($total-content-width, $base-font-size);
+  $content-width: 500px + ($base-layout-unit * 2);
+  margin: calculate_em($base-layout-unit, $base-font-size) auto;
+  width: calculate_em($content-width, $base-font-size);
   @media screen and (max-width:
-      calculate_em($total-content-width, $base-font-size)) {
-    // Change the top margin to account for the new height of the site header
-    // when it collapses vertically.
-    margin-top: calculate_em(($base-layout-unit * 4) + 48px, $base-font-size);
+      calculate_em($content-width, $base-font-size)) {
     width: 100%; }
-  // Remove the top margin to account for the site header becoming static for
-  // devices with smaller screens.
-  @media screen and ($small-screen-breakpoint) {
-    margin-top: 0; }
-  @media screen and (max-width: calculate_em(
-      $main-content-width + $base-layout-unit, $base-font-size)) {
-    margin-bottom: calculate_em($base-layout-unit / 2, $base-font-size); }
-  // Don't use a "section" element, because semantics blah blah blah. See
-  // <http://html5doctor.com/the-section-element/> for more information.
-  /* div */.content__column {
-    // Using "inline-block" means there can't any whitespace between columns.
-    display: inline-block;
-    vertical-align: top;
-    /* div, article, nav, etc. */.content__column__block {
-      margin: calculate_em($base-layout-unit, $base-font-size) 0 0 0;
-      @media screen and (max-width: calculate_em(
-          $main-content-width + $base-layout-unit, $base-font-size)) {
-        margin-top: calculate_em($base-layout-unit / 2, $base-font-size); } } }
-  // Don't use a "section" element, because semantics blah blah blah. See
-  // <http://html5doctor.com/the-section-element/> for more information.
-  /* div */.content__column--main-column {
-    width: calculate_em($main-content-width, $base-font-size);
-    @media screen and (max-width: calculate_em(
-        $main-content-width + $base-layout-unit, $base-font-size)) {
-      // Setting the margin makes the content too wide for small screens;
-      // however, changing the "box-sizing" property and setting the padding
-      // does the trick, for some reason.
-      box-sizing: border-box;
-      padding: 0 calculate_em($base-layout-unit / 2, $base-font-size);
-      width: 100%; } }
-  // Don't use a "section" element, because semantics blah blah blah. See
-  // <http://html5doctor.com/the-section-element/> for more information.
-  /* div */.content__column--side-column {
-    margin: 0 0 0 calculate_em($base-layout-unit, $base-font-size);
-    width: calculate_em($side-content-width, $base-font-size); } }
+  /* div, article, nav, etc. */.content__block {
+    margin: calculate_em($base-layout-unit, $base-font-size) 0 0 0;
+    @media screen and (max-width:
+        calculate_em($content-width, $base-font-size)) {
+      margin: calculate_em($base-layout-unit / 2, $base-font-size) 0 0 0;
+      padding: 0 calculate_em($base-layout-unit / 2, $base-font-size); } } }
 
 /* ul */.metadata-list {
   list-style: none;
