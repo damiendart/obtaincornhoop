@@ -8,15 +8,6 @@
 @import "global-variables";
 @import "mixins";
 
-@font-face {
-  $font-folder: "http://www.robotinaponcho.net/obtaincornhoop/";
-  $font-basename: "glyphiconshalflings-regular";
-  font-family: "Glyphicons Halflings";
-  @each $font-type in (("eot?iefix", "embedded-opentype"), ("woff", "woff"),
-      ("ttf", "truetype"), ("svg#glyphicons_halflingsregular", "svg")) {
-  src: url("#{$font-folder}#{$font-basename}.#{nth($font-type, 1)}")
-      format("#{nth($font-type, 2)}"); } }
-
 article, hgroup, nav, section {
   // Let older browsers in on the HTML5 fun. For more information, see
   // <https://github.com/aFarkas/html5shiv#html5shivjs> and

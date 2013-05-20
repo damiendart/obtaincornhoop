@@ -1,0 +1,14 @@
+// Glyphicons Halflings stuff for Obtain Corn Hoop.
+//
+// Copyright (C) 2013 Damien Dart, <damiendart@pobox.com>.
+// This file is distributed under the MIT licence. For more information,
+// please refer to the accompanying "LICENCE" file.
+
+@font-face {
+  $font-folder: "http://www.robotinaponcho.net/obtaincornhoop/";
+  $font-basename: "glyphiconshalflings-regular";
+  font-family: "Glyphicons Halflings";
+  @each $font-type in (("eot?iefix", "embedded-opentype"), ("woff", "woff"),
+      ("ttf", "truetype"), ("svg#glyphicons_halflingsregular", "svg")) {
+  src: url("#{$font-folder}#{$font-basename}.#{nth($font-type, 1)}")
+      format("#{nth($font-type, 2)}"); } }
