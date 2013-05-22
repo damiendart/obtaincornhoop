@@ -29,14 +29,14 @@
     %nav.site-header__navigation
       %ul#selectnav.navigation-list
         %li.navigation-list__item>
-          %a.navigation-list__item__button{:href => "/"} Home
+          %a.button{:href => "/"} Home
         %li.navigation-list__item>
-          %a.navigation-list__item__button{:href => "/archive"} Archives
+          %a.button{:href => "/archive"} Archives
         %li.navigation-list__item>
-          %a.navigation-list__item__button{:href => "/about"} About
+          %a.button{:href => "/about"} About
         %tumblrblockAskEnabled
           %li.navigation-list__item>
-            %a.navigation-list__item__button{:href => "/ask"} Ask
+            %a.button{:href => "/ask"} Ask
   %div.content
     %tumblrblockDayPage
       %div.content__block
@@ -113,17 +113,17 @@
         %ul.navigation-list
           %tumblrblockPreviousPage
             %li.navigation-list__item.navigation-list__item--previous
-              %a{:class => "navigation-list__item__button", :href => "{PreviousPage}"} Newer posts
+              %a.button{:href => "{PreviousPage}"} Newer posts
           %tumblrblockNextPage
             %li.navigation-list__item.navigation-list__item--next
-              %a{:class => "navigation-list__item__button", :href => "{NextPage}"} Older posts
+              %a.button{:href => "{NextPage}"} Older posts
     %tumblrblockDayPagination
       %nav.content__block
         %ul.navigation-list
           %tumblrblockPreviousDayPage
             %li.navigation-list__item.navigation-list__item--previous
-              %a{:class => "navigation-list__item__button", :href => "{PreviousDayPage}"} {DayOfMonth} {Month}, {Year}
+              %a.button{:href => "{PreviousDayPage}"} {DayOfMonth} {Month}, {Year}
           %tumblrblockNextDayPage
             %li.navigation-list__item.navigation-list__item--next
-              %a{:class => "navigation-list__item__button", :href => "{NextDayPage}"} {DayOfMonth} {Month}, {Year}
+              %a.button{:href => "{NextDayPage}"} {DayOfMonth} {Month}, {Year}
 %script selectnav("selectnav", { autoselect: false, label: "&#x2605;&#x2605;&#x2605; NAVIGATION &#x2605;&#x2605;&#x2605;" });
