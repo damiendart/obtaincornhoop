@@ -4,6 +4,7 @@
 // This file is distributed under the MIT licence. For more information,
 // please refer to the accompanying "LICENCE" file.
 
+@import "functions";
 @import "global-variables";
 
 .selectnav {
@@ -15,4 +16,5 @@
       display: none; }
     .selectnav {
       display: block;
-      margin: 0 auto; } } }
+      margin: calculate_em($base-layout-unit / 4, $base-font-size) auto
+          0 auto; } } }
