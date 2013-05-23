@@ -15,7 +15,9 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   display: block; }
 
 body {
-  background-color: #a45e66;
+  background: #a45e66
+      url("http://www.robotinaponcho.net/obtaincornhoop/page-background.png")
+      no-repeat center -150px;
   color: #ffffff;
   // I think setting the font-size initially to 100% fixes some IE bug?
   font: 100% "Helvetica Neue", Helvetica, Arial, sans-serif;
