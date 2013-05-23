@@ -110,6 +110,8 @@
       position: relative;
       width: calculate_em($base-line-height, $base-font-size);
       /* img */.avatar {
+        border: none;
+        display: block;
         margin: -8px 0 0 0; // Assuming avatar images are 16px by 16px.
         opacity: 0.25; // Poor man's grey tint.
         position: relative;
@@ -131,9 +133,11 @@
     @include colour-swap-links($background-colour, $foreground-colour); } }
 
 /* section */.post-comments {
-  $background-colour: #ffffff;
-  $foreground-colour: lighten(#000000, 75);
+  $background-colour: darken(#ffffff, 7.5);
+  $foreground-colour: lighten(#000000, 70);
   background-color: $background-colour;
+  border-radius: 0 0 calculate_em($base-layout-unit / 4, $base-font-size)
+      calculate_em($base-layout-unit / 4, $base-font-size);
   @each $prefix in ("", "-moz-", "-webkit-") {
     #{$prefix}box-shadow: inset 0
       calculate_em($base-layout-unit / 2, $base-font-size)
