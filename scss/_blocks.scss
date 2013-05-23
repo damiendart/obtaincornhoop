@@ -163,6 +163,16 @@
   blockquote {
     margin: calculate_em($base-line-height / 2, $base-font-size) 0 0 0;
     padding: 0 0 0 calculate_em($base-line-height, $base-font-size); }
+  iframe, img {
+    border-style: none; // Remove border on linked images.
+    display: block;
+    max-width: 100%;
+    // FIXME: We shouldn't be applying this to every image and "iframe".
+    @media screen and (max-width: calculate_em(500px, $base-font-size)) {
+      margin: 0 0 0 calculate_em($base-layout-unit * -1, $base-font-size);
+      @each $prefix in ("", "-moz-", "-webkit-") {
+        max-width: #{$prefix}calc(100% +
+            #{calculate_em($base-layout-unit * 2, $base-font-size)}); } } }
   h1 {
     $heading-font-size: 24px;
     $heading-line-height: 36px;

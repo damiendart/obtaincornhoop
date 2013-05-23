@@ -30,8 +30,3 @@ body {
   -webkit-text-size-adjust: 100%;
   @media screen and ($small-screen-breakpoint) {
     font-size: calculate_percentage(14px, $base-font-size); } }
-
-iframe, img {
-  border-style: none; // Remove border on linked images.
-  display: block;
-  max-width: 100%; }
