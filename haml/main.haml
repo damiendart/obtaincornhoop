@@ -14,6 +14,8 @@
   %meta{:content => "initial-scale=1.0,maximum-scale=1.0,user-scalable=no,width=device-width", :name => "viewport"}
   %script{:src => "//www.robotinaponcho.net/obtaincornhoop/selectnav.min.js"}
   %script{:src => "//use.typekit.com/gwe8uye.js"}
+  -# HACK: Prevent "SelectNav.js" FOUC.
+  %script document.documentElement.className += "js";
   %script try{Typekit.load();}catch(e){}
   %title<
     %tumblrblockDayPage> Posts From {DayOfMonth} {Month}, {Year} //&nbsp;
