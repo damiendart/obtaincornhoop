@@ -210,6 +210,7 @@
   $site-title-font-size: 60px;
   $site-title-line-height: $site-title-font-size;
   font-size: calculate_percentage($site-title-font-size, $base-font-size);
+  font-weight: normal;
   line-height: calculate_em($site-title-line-height, $site-title-font-size);
   margin: 0;
   @media screen and ($small-screen-breakpoint) {
