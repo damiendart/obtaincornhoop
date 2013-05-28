@@ -10,7 +10,8 @@
   font-family: "Glyphicons Halflings";
   font-style: normal;
   font-weight: normal;
-  src: url("#{$font-folder}#{$font-basename}.eot.?iefix") format("embedded-opentype"),
+  src: url("#{$font-folder}#{$font-basename}.eot");
+  src: url("#{$font-folder}#{$font-basename}.eot?#iefix") format("embedded-opentype"),
       url("#{$font-folder}#{$font-basename}.woff") format("woff"),
       url("#{$font-folder}#{$font-basename}.ttf") format("truetype"),
       url("#{$font-folder}#{$font-basename}.svg#glyphicons_halflingsregular") format("svg"); }

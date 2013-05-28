@@ -49,7 +49,7 @@
     &:before {
       // Adjust font size to make icon glyphs align better with adjacent text.
       $font-size: $base-font-size * 0.75;
-      clear: both; // Required for Internet Explorer 9 and onwards.
+      clear: both; // HACK: Required for Internet Explorer 9 and onwards.
       float: left;
       font-family: "Glyphicons Halflings";
       font-size: calculate_percentage($font-size, $base-font-size);
@@ -229,11 +229,14 @@
 
 /* ul */.tag-list {
   display: inline;
+  margin: 0; // HACK: Fix Internet Explorer 7 funkiness.
   padding: 0;
   /* li */.tag-list__item {
     display: inline;
-    &:not(:last-child):after {
-      content: ", "; } } }
+    &:before {
+      content: ", "; }
+    &:first-child:before {
+      content: ""; } } }
 
 /* h2 */.page-title {
   $page-title-font-size: 30px;
