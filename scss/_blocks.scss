@@ -203,8 +203,15 @@
   $foreground-colour: #ffffff;
   color: $foreground-colour;
   margin: calculate_em($base-layout-unit * 3, $base-font-size) auto;
-  /* div */.site-header__container__site-title { }
-  /* nav */.site-header__container__site-navigation { } }
+  /* div */.site-header__title {
+    // HACKS: In all versions of Internet Explorer, the gap between the site
+    // title and site navigation is a little too narrow; the following mess
+    // fixes (lol) that.
+    _margin: 0 0 calculate_em($base-layout-unit / 4, $base-font-size) 0;
+    margin/*\**/: 0 0 calculate_em($base-layout-unit / 4, $base-font-size) 0\9;
+    @media screen and (min-width:0\0) {
+      margin: 0 0 calculate_em($base-layout-unit / 4, $base-font-size) 0; } }
+  /* nav */.site-header__navigation { } }
 
 /* h1 */.site-title {
   $site-title-font-size: 60px;
