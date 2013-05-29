@@ -43,21 +43,20 @@
   text-align: left;
   padding: 0;
   /* li */.metadata-list__item {
-    font-style: italic;
-    margin: 0 0 0 calculate_em($base-layout-unit, $base-font-size);
-    text-indent: calculate_em($base-layout-unit * -1, $base-font-size);
     &:before {
       // Adjust font size to make icon glyphs align better with adjacent text.
       $font-size: $base-font-size * 0.75;
-      clear: both; // HACK: Required for Internet Explorer 9 and onwards.
-      float: left;
+      display: block;
       font-family: "Glyphicons Halflings";
       font-size: calculate_percentage($font-size, $base-font-size);
-      font-style: normal;
       height: calculate_em($base-line-height, $font-size);
       line-height: calculate_em($base-line-height, $font-size);
       speak: none; // TODO: Check whether this is necessary.
-      width: calculate_em($base-line-height, $font-size); } }
+      width: calculate_em($base-line-height, $font-size); }
+    /* div */.metadata-list__item__text {
+      font-style: italic;
+      margin: calculate_em($base-line-height * -1, $base-font-size) 0
+          0 calculate_em($base-layout-unit, $base-font-size); } }
   @each $type in (("date", "\e023"), ("notes", "\e005"),
       ("source", "\e087"), ("tags", "\e042")) {
     /* li */.metadata-list__item--#{nth($type, 1)} {
