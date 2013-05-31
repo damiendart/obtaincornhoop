@@ -115,20 +115,20 @@
               {PostNotes}
       %tumblrblockPagination
         %nav.content__block
-          %ul.navigation-list
+          %ul.pagination
             %tumblrblockPreviousPage
-              %li.navigation-list__item.navigation-list__item--previous
+              %li.pagination__previous
                 %a.button{:href => "{PreviousPage}"} Newer posts
             %tumblrblockNextPage
-              %li.navigation-list__item.navigation-list__item--next
+              %li.pagination__next
                 %a.button{:href => "{NextPage}"} Older posts
       %tumblrblockDayPagination
         %nav.content__block
-          %ul.navigation-list
+          %ul.pagination
             %tumblrblockPreviousDayPage
-              %li.navigation-list__item.navigation-list__item--previous
+              %li.pagination__previous
                 %a.button{:href => "{PreviousDayPage}"} {DayOfMonth} {Month}, {Year}
             %tumblrblockNextDayPage
-              %li.navigation-list__item.navigation-list__item--next
+              %li.pagination__next
                 %a.button{:href => "{NextDayPage}"} {DayOfMonth} {Month}, {Year}
   %script selectnav("selectnav", { autoselect: false, label: "&#x2605;&#x2605;&#x2605; NAVIGATION &#x2605;&#x2605;&#x2605;" });
