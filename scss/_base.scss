@@ -19,16 +19,20 @@ body {
       url("http://www.robotinaponcho.net/obtaincornhoop/page-background.png")
       no-repeat center -150px;
   color: #ffffff;
-  // I think setting the font-size initially to 100% fixes some IE bug?
+  // Setting the font size initially to 100% avoids the Internet Explorer 6
+  // and Internet Explorer 7 exaggerated text-resizing bug (see
+  // <http://alistapart.com/article/howtosizetextincss#section5>).
   font: 100% "Helvetica Neue", Helvetica, Arial, sans-serif;
-  // TODO: Explain the reason behind this if-statement.
+  // Most, if not all, browsers set their default font size to 16 pixels.
   @if ($base-font-size != 16px) {
     font-size: calculate_percentage($base-font-size, 16); }
   -webkit-font-smoothing: antialiasing;
   line-height: calculate_em($base-line-height, $base-font-size);
   margin: 0; // Reset the body margin set in most browsers.
+  // Internet Explorer 6 hates us and doesn't center block elements with just
+  // "margin-left: auto; margin-right: auto" alone.
   text-align: center;
   // Prevent text funkiness when changing orientation on iOS devices.
   -webkit-text-size-adjust: 100%;
   @media screen and ($small-screen-breakpoint) {
-    font-size: calculate_percentage(14px, $base-font-size); } }
+    font-size: calculate_percentage($base-font-size * 0.875, $base-font-size); } }

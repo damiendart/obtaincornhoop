@@ -22,18 +22,18 @@
 
 // Don't use a "section" element, because semantics blah blah blah. See
 // <http://html5doctor.com/the-section-element/> for more information.
-/* div */.content {
-  $content-width: 500px + ($base-layout-unit * 2);
+/* div */.main-content {
+  $width: 500px + ($base-layout-unit * 2);
   margin: calculate_em($base-layout-unit, $base-font-size) auto;
-  width: calculate_em($content-width, $base-font-size);
+  width: calculate_em($width, $base-font-size);
   @media screen and (max-width:
-      calculate_em($content-width, $base-font-size)) {
+      calculate_em($width, $base-font-size)) {
     margin: calculate_em($base-layout-unit / 2, $base-font-size) auto;
     width: 100%; }
-  /* div, article, nav, etc. */.content__block {
+  /* div, article, nav, etc. */.main-content__block {
     margin: calculate_em($base-layout-unit, $base-font-size) 0 0 0;
     @media screen and (max-width:
-        calculate_em($content-width, $base-font-size)) {
+        calculate_em($width, $base-font-size)) {
       margin: calculate_em($base-layout-unit / 2, $base-font-size) 0 0 0;
       padding: 0 calculate_em($base-layout-unit / 2, $base-font-size); } } }
 
