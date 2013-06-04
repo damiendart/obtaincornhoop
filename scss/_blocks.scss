@@ -10,11 +10,9 @@
 @import "mixins";
 
 /* a */.button {
-  $background-colour: #ffffff;
-  $foreground-colour: #000000;
-  @include colour-swap-links($background-colour, $foreground-colour);
+  @include colour-swap-links(#ffffff, #000000);
   border-radius: calculate_em($base-layout-unit, $base-font-size);
-  display: block;
+  display: inline-block;
   font-weight: bold;
   padding: calculate_em($base-layout-unit / 2, $base-font-size)
       calculate_em($base-layout-unit, $base-font-size);
@@ -30,7 +28,7 @@
       calculate_em($width, $base-font-size)) {
     margin: calculate_em($base-layout-unit / 2, $base-font-size) auto;
     width: 100%; }
-  /* div, article, nav, etc. */.main-content__block {
+  /* [Any block-level element] */.main-content__block {
     margin: calculate_em($base-layout-unit, $base-font-size) 0 0 0;
     @media screen and (max-width:
         calculate_em($width, $base-font-size)) {
@@ -182,11 +180,11 @@
         max-width: #{$prefix}calc(100% +
             #{calculate_em($base-layout-unit * 2, $base-font-size)}); } } }
   h1 {
-    $heading-font-size: 24px;
-    $heading-line-height: 36px;
-    font-size: calculate_percentage($heading-font-size, $base-font-size);
-    line-height: calculate_em($heading-line-height, $heading-font-size);
-    margin: 0 0 calculate_em($base-line-height / 2, $heading-font-size) 0; }
+    $font-size: 24px;
+    $line-height: 36px;
+    font-size: calculate_percentage($font-size, $base-font-size);
+    line-height: calculate_em($line-height, $font-size);
+    margin: 0 0 calculate_em($base-line-height / 2, $font-size) 0; }
   p {
     margin: calculate_em($base-line-height / 2, $base-font-size) 0 0 0;
     &.quote-attribution {
@@ -218,16 +216,17 @@
   /* nav */.site-header__navigation { } }
 
 /* h1 */.site-title {
-  $site-title-font-size: 60px;
-  $site-title-line-height: $site-title-font-size;
-  font-size: calculate_percentage($site-title-font-size, $base-font-size);
+  $font-size: 60px;
+  $line-height: $font-size;
+  font-size: calculate_percentage($font-size, $base-font-size);
   font-weight: normal;
-  line-height: calculate_em($site-title-line-height, $site-title-font-size);
+  line-height: calculate_em($line-height, $font-size);
   margin: 0;
   @media screen and ($small-screen-breakpoint) {
-    $small-screen-font-size: 36px;
-    font-size: calculate_percentage($small-screen-font-size, $base-font-size);
-    line-height: calculate_em($small-screen-font-size, $small-screen-font-size); }
+    $font-size: 36px;
+    $line-height: $font-size;
+    font-size: calculate_percentage($font-size, $base-font-size);
+    line-height: calculate_em($line-height, $font-size); }
   .site-title__link {
     $background-colour: transparent;
     $foreground-colour: #ffffff;
@@ -240,7 +239,7 @@
 
 /* ul */.tag-list {
   display: inline;
-  margin: 0; // HACK: Fix Internet Explorer 7 funkiness.
+  margin: 0;
   padding: 0;
   /* li */.tag-list__item {
     display: inline;
@@ -250,9 +249,9 @@
       content: ""; } } }
 
 /* h2 */.page-title {
-  $page-title-font-size: 30px;
-  $page-title-line-height: 36px;
-  font-size: calculate_percentage($page-title-font-size, $base-font-size);
-  line-height: calculate_em($page-title-line-height, $page-title-font-size);
+  $font-size: 30px;
+  $line-height: 36px;
+  font-size: calculate_percentage($font-size, $base-font-size);
+  line-height: calculate_em($line-height, $font-size);
   margin: 0;
   text-align: center; }
