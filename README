@@ -6,13 +6,16 @@ The theme for [my Tumblr-powered weblog][1], written in Haml and Sass.
 I'm publishing this project online mainly for my own benefit. Be
 prepared to gut and hack this thing if you want to use it for your own
 Tumblr weblog; it only supports the small subset of Tumblr's features
-that I use, it's a collosal pain in the arse to customise if you're not
+that I use, it's a colossal pain in the arse to customise if you're not
 me, and I'm prone to making drastic changes on a whim.
 
 Having said that, feel free to browse the code and pinch bits for your
-own theme or whatever. I can't offer much in the way of support, except
-for maybe saying "good luck".
+own theme or whatever. This theme uses the [HTML5 Shiv][2] and
+[SelectNav.js][3] JavaScript libraries. I can't offer much in the way of
+support, except for maybe saying "good luck".
 
 -- Damien
 
 [1]: <http://blog.robotinaponcho.net/>
+[2]: <https://github.com/aFarkas/html5shiv>
+[3]: <https://github.com/lukaszfiszer/selectnav.js>
