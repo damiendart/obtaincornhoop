@@ -95,10 +95,12 @@
               %ul.metadata-list
                 %tumblrblockReblog
                   %li.metadata-list__item.metadata-list__item--date<
-                    .metadata-list__item__text <a href="{Permalink}">Reblogged {TimeAgo}</a> from {ReblogParentName}
+                    .metadata-list__item__text>
+                      <a href="{Permalink}">Reblogged <span class="js-relative-date" data-relative-date="{TimeAgo}">on {Month} {DayOfMonth}, {Year}</span></a> from {ReblogParentName}
                 %tumblrblockNotReblog
                   %li.metadata-list__item.metadata-list__item--date<
-                    .metadata-list__item__text <a href="{Permalink}">Posted {TimeAgo}</a>
+                    .metadata-list__item__text>
+                      <a href="{Permalink}">Posted <span class="js-relative-date" data-relative-date="{TimeAgo}">on {Month} {DayofMonth}, {Year}</span></a>
                 %tumblrblockContentSource
                   %li.metadata-list__item.metadata-list__item--source<
                     .metadata-list__item__text Source: <a href="{SourceURL}">{SourceTitle}</a>
@@ -136,4 +138,10 @@
             %tumblrblockNextDayPage
               %li.pagination__next
                 %a.button{:href => "{NextDayPage}"} {DayOfMonth} {Month}, {Year}
-  %script selectnav("selectnav", { autoselect: false, label: "&#x2605;&#x2605;&#x2605; NAVIGATION &#x2605;&#x2605;&#x2605;" });
+  :javascript
+    selectnav("selectnav", { autoselect: false, label: "&#x2605;&#x2605;&#x2605; NAVIGATION &#x2605;&#x2605;&#x2605;" });
+    var relative_dates = document.getElementsByClassName("js-relative-date");
+    for (var i = 0; i < relative_dates.length; i++) {
+      relative_dates[i].innerHTML
+          relative_dates[i].getAttribute("data-relative-date");
+    }
