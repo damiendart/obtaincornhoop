@@ -11,11 +11,13 @@ me, and I'm prone to making drastic changes on a whim.
 
 Having said that, feel free to browse the code and pinch bits for your
 own theme or whatever. This theme uses the [HTML5 Shiv][2] and
-[SelectNav.js][3] JavaScript libraries. I can't offer much in the way of
-support, except for maybe saying "good luck".
+[SelectNav.js][3] JavaScript libraries and the [Bourbon][4] Sass
+library. I can't offer much in the way of support, except for maybe
+saying "good luck".
 
 -- Damien
 
 [1]: <http://blog.robotinaponcho.net/>
 [2]: <https://github.com/aFarkas/html5shiv>
 [3]: <https://github.com/lukaszfiszer/selectnav.js>
+[4]: <http://bourbon.io/>

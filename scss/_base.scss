@@ -4,9 +4,9 @@
 // This file is distributed under the MIT licence. For more information,
 // please refer to the accompanying "LICENCE" file.
 
-@import "functions";
 @import "global-variables";
 @import "mixins";
+@import "bourbon/bourbon";
 
 // Let older browsers in on the HTML5 fun. For more information, see
 // <https://github.com/aFarkas/html5shiv#html5shivjs> and
@@ -25,9 +25,9 @@ body {
   font: 100% "Helvetica Neue", Helvetica, Arial, sans-serif;
   // Most, if not all, browsers set their default font size to 16 pixels.
   @if ($base-font-size != 16px) {
-    font-size: calculate_percentage($base-font-size, 16); }
+    font-size: percentage($base-font-size / 16); }
   -webkit-font-smoothing: antialiasing;
-  line-height: calculate_em($base-line-height, $base-font-size);
+  line-height: em($base-line-height, $base-font-size);
   margin: 0; // Reset the body margin set in most browsers.
   // Internet Explorer 6 hates us and doesn't center block elements with just
   // "margin-left: auto; margin-right: auto" alone.
@@ -35,4 +35,4 @@ body {
   // Prevent text funkiness when changing orientation on iOS devices.
   -webkit-text-size-adjust: 100%;
   @media screen and ($small-screen-breakpoint) {
-    font-size: calculate_percentage($base-font-size * 0.875, $base-font-size); } }
+    font-size: percentage($base-font-size * 0.875 / $base-font-size); } }
