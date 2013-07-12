@@ -13,10 +13,10 @@ require "sass"
 Sass::Script::Number.precision = 8
 
 CLOBBER.include("*.css", "*.html")
-task :default => ["theme.html", "style.css"]
+task :default => ["theme.html", "blog-style.css"]
 
 desc "Spit out the Obtain Corn Hoop stylesheet."
-file "style.css" => Dir.glob(File.join("scss" ,"*")) do |task|
+file "blog-style.css" => Dir.glob(File.join("scss" ,"*")) do |task|
   puts "# Spitting out \"" + task.name + "\"."
   output = Sass::Engine.for_file(File.join("scss", "main.scss"),
       {:cache => false, :style => :compressed, :syntax => :scss}).render
