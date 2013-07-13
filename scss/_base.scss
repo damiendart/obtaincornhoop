@@ -11,7 +11,7 @@
 // Let older browsers in on the HTML5 fun. For more information, see
 // <https://github.com/aFarkas/html5shiv#html5shivjs> and
 // <https://github.com/necolas/normalize.css/blob/master/normalize.css#L11>.
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+article, footer, header, nav, section {
   display: block; }
 
 body {
@@ -35,4 +35,4 @@ body {
   // Prevent text funkiness when changing orientation on iOS devices.
   -webkit-text-size-adjust: 100%;
   @media screen and ($small-screen-breakpoint) {
-    font-size: percentage($base-font-size * 0.875 / $base-font-size); } }
+    font-size: 87.5%; } }

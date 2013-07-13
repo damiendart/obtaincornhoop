@@ -11,8 +11,8 @@
 
 /* a */.button {
   @include colour-swap-links(#ffffff, #000000);
+  @include inline-block;
   border-radius: em($base-layout-unit, $base-font-size);
-  display: inline-block;
   font-weight: bold;
   padding: em($base-layout-unit / 2, $base-font-size)
       em($base-layout-unit, $base-font-size);
@@ -69,7 +69,7 @@
     // Inline-block elements don't like whitespace between each other. See
     // <http://css-tricks.com/fighting-the-space-between-inline-block-elements/>
     // for more information.
-    display: inline-block;
+    @include inline-block;
     margin: em($base-layout-unit / 2, $base-font-size) 0
         0 em($base-layout-unit / 2, $base-font-size); } }
 
