@@ -7,6 +7,19 @@
 @import "global-variables";
 @import "bourbon/bourbon";
 
-// TODO: Explain this hack.
-.js-site-title-windows-hack {
-  margin: 0 0 em($base-layout-unit / 4, 60px) 0; }
+// TODO: Add some documentation.
+
+.js {
+  #selectnav {
+    @media screen and ($small-screen-breakpoint) {
+      display: none; } }
+  // TODO: Explain this hack.
+  .js-site-title-windows-hack {
+    margin: 0 0 em($base-layout-unit / 4, 60px) 0; }
+  .selectnav {
+    @media screen and ($small-screen-breakpoint) {
+      display: block;
+      margin: em($base-layout-unit / 4, $base-font-size) auto 0 auto; } } }
+
+.selectnav {
+  display: none; }
