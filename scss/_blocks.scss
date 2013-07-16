@@ -239,6 +239,13 @@
     &:first-child:before {
       content: ""; } } }
 
+/* div */.page-background {
+  background: url("http://www.robotinaponcho.net/assets/blog-background.png")
+      no-repeat center -150px;
+  height: 505px;
+  margin: 0 auto -505px auto;
+  max-width: 100%; }
+
 /* h2 */.page-title {
   $font-size: 30px;
   $line-height: 36px;
