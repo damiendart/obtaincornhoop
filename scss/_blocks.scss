@@ -190,6 +190,9 @@
       font-style: italic; }
     &:first-child {
       margin: 0; } }
+  pre {
+    margin: em($base-line-height / 2, $base-font-size) 0 0 0;
+    overflow: auto; }
   ol, ul {
     list-style: square;
     margin: em($base-line-height / 2, $base-font-size) 0
