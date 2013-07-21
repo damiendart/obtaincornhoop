@@ -7,7 +7,7 @@
 @import "global-variables";
 @import "glyphicons-halflings";
 @import "mixins";
-@import "bourbon/bourbon";
+@import "bourbon";
 
 /* a */.button {
   @include colour-swap-links(#ffffff, #000000);

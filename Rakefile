@@ -2,10 +2,9 @@
 # This file is distributed under the MIT licence. For more information, please
 # refer to the accompanying "LICENCE" file.
 
-require "haml"
-require "rake"
-require "rake/clean"
-require "sass"
+require "rubygems"
+require "bundler/setup"
+Bundler.require(:default)
 
 # Increase the degree of precision of values that Sass spits out to prevent
 # some browsers from rendering elements a pixel narrower than intended. See
