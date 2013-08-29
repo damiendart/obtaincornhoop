@@ -4,7 +4,7 @@
 -# This file is distributed under the MIT licence. For more information,
 -# please refer to the accompanying "LICENCE" file.
 
--# A doctype declaration is unnecessary as Tumblr adds its own.
+-# A "doctype" declaration is unnecessary as Tumblr adds its own.
 %html{:lang => "en"}
   %head
     %link{:href => "{RSS}", :rel => "alternate", :type => "application/rss+xml"}
@@ -18,13 +18,13 @@
     %script{:src => "//www.robotinaponcho.net/assets/html5shiv.js"}
     %script{:src => "//www.robotinaponcho.net/assets/selectnav.min.js"}
     %script{:src => "//use.typekit.com/gwe8uye.js"}
-    -# HACK: Prevent "SelectNav.js" FOUC.
+    -# HACK: Prevent "SelectNav.js"-related FOUC.
     %script document.documentElement.className += "js";
     %script try{Typekit.load();}catch(e){}
     %title<
       -# HACK: Haml doesn't like leaving trailing whitespace, so fudge things
-      -# by using non-breaking spaces which get converted to regular spaces
-      -# when everything is compiled.
+      -# by using non-breaking spaces which can be converted to regular spaces
+      -# after rendering.
       %tumblrblockDayPage> Posts From {DayOfMonth} {Month}, {Year} //&nbsp;
       %tumblrblockPostSummary> {PostSummary} //&nbsp;
       %tumblrblockSearchPage> Search Results For &ldquo;{SearchQuery}&rdquo; //&nbsp;

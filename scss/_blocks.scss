@@ -18,7 +18,7 @@
       em($base-layout-unit, $base-font-size);
   text-transform: uppercase; }
 
-// Don't use a "section" element, because semantics blah blah blah. See
+// Don't use a "section" element because semantics blah blah blah. See
 // <http://html5doctor.com/the-section-element/> for more information.
 /* div */.main-content {
   $width: 500px + ($base-layout-unit * 2);
@@ -47,7 +47,7 @@
       font-size: percentage($font-size / $base-font-size);
       height: em($base-line-height, $font-size);
       line-height: em($base-line-height, $font-size);
-      speak: none; // TODO: Check whether this is necessary.
+      speak: none;
       width: em($base-line-height, $font-size); }
     /* div */.metadata-list__item__text {
       font-style: italic;
@@ -61,7 +61,7 @@
 
 /* ul */.navigation-list {
   list-style: none;
-  // Apply negative margins to negate list items' "gutters".
+  // Apply negative margins to negate list items' gutters.
   margin: em($base-layout-unit / -2, $base-font-size) 0
       0 em($base-layout-unit / -2, $base-font-size);
   padding-left: 0;
