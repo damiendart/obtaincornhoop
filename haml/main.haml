@@ -18,9 +18,8 @@
     %script{:src => "//www.robotinaponcho.net/assets/html5shiv.js"}
     %script{:src => "//www.robotinaponcho.net/assets/selectnav.min.js"}
     %script{:src => "//use.typekit.com/gwe8uye.js"}
-    -# HACK: Prevent "SelectNav.js"-related FOUC.
-    %script document.documentElement.className += "js";
-    %script try{Typekit.load();}catch(e){}
+    :javascript
+      #{File.read(File.join(File.dirname(__FILE__), "javascript", "top.js"))}
     %title<
       -# HACK: Haml doesn't like leaving trailing whitespace, so fudge things
       -# by using non-breaking spaces which can be converted to regular spaces
@@ -145,16 +144,4 @@
               %li.pagination__next
                 %a.button{:href => "{NextDayPage}"} {DayOfMonth} {Month}, {Year}
   :javascript
-    selectnav("selectnav", { autoselect: false,
-        label: "&#x2605;&#x2605;&#x2605; NAVIGATION &#x2605;&#x2605;&#x2605;" });
-    if (navigator.appVersion.indexOf("Mac") == -1) {
-      var site_title = document.getElementsByClassName("site-title");
-      for (var i = 0; i < site_title.length; i++) {
-        site_title[i].className += " js-site-title-windows-hack";
-      }
-    }
-    var relative_dates = document.getElementsByClassName("js-relative-date");
-    for (var i = 0; i < relative_dates.length; i++) {
-      relative_dates[i].innerHTML =
-          relative_dates[i].getAttribute("data-relative-date");
-    }
+    #{File.read(File.join(File.dirname(__FILE__), "javascript", "bottom.js"))}
