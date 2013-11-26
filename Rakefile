@@ -27,7 +27,8 @@ file "blog-style.css" => Dir.glob(File.join("scss" ,"*")) do |task|
 end
 
 desc "Spit out the Obtain Corn Hoop Tumblr theme template."
-file "theme.html" => Dir.glob(File.join("haml" ,"*")) do |task|
+file "theme.html" => Dir.glob(File.join("haml" ,"*")) +
+    Dir.glob(File.join("javascript" ,"*")) do |task|
   puts "# Spitting out \"" + task.name + "\"."
   template = File.read(File.join("haml", "main.haml"))
   output = Haml::Engine.new(template, {:format => :html5,
