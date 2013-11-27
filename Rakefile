@@ -33,6 +33,8 @@ file "theme.html" => Dir.glob(File.join("haml" ,"*")) +
   template = File.read(File.join("haml", "main.haml"))
   output = Haml::Engine.new(template, {:format => :html5,
       :escape_attrs => false, :attr_wrapper => "\""}).render
+  output.gsub!(%r{^\s*$\n}, "")
+  output.gsub!(%r{^\s*//.*\n}, "")
   output.gsub!(%r{<tumblrblock(.*?)>},"{block:\\1}")
   output.gsub!(%r{</tumblrblock(.*?)>},"{/block:\\1}")
   output.gsub!(%r{&nbsp;}, " ")
