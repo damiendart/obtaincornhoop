@@ -5,5 +5,7 @@
 // please refer to the accompanying "LICENCE" file.
 
 // HACK: Prevent "SelectNav.js"-related FOUC.
-document.documentElement.className += "js";
+var date = new Date();
+document.documentElement.className += "js js-background-" +
+    date.getDay().toString();
 try{Typekit.load();}catch(e){}

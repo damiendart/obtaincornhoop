@@ -11,6 +11,10 @@
   #selectnav {
     @media screen and ($small-screen-breakpoint) {
       display: none; } }
+  .js-background-0, .js-background-2, .js-background-4, .js-background-6 {
+    background-color: #c0392b; }
+  .js-background-1, .js-background-3, .js-background-5 {
+    background-color: #34495e; }
   // HACK: In browsers running on Windows, this hack adds a small bottom
   // margin to the site title, as without it the space between the site title
   // and site navigation is a little too small.
