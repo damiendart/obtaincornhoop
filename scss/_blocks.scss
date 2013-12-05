@@ -192,7 +192,13 @@
       margin: 0; } }
   pre {
     margin: em($base-line-height / 2, $base-font-size) 0 0 0;
-    overflow: auto; }
+    overflow: auto;
+    &::-webkit-scrollbar {
+      $height: 12px;
+      height: em($height, $base-line-height); }
+    &::-webkit-scrollbar-thumb {
+      background: lighten($foreground-colour, 50%);
+      -webkit-border-radius: $height / 2; } }
   ol, ul {
     list-style: square;
     margin: em($base-line-height / 2, $base-font-size) 0

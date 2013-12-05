@@ -9,3 +9,4 @@ var date = new Date();
 document.documentElement.className += "js js-background-" +
     date.getDay().toString();
 try{Typekit.load();}catch(e){}
+hljs.initHighlightingOnLoad();
