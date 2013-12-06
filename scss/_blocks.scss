@@ -197,6 +197,7 @@
       $height: 12px;
       height: em($height, $base-line-height); }
     &::-webkit-scrollbar-thumb {
+      $height: 12px;
       background: lighten($foreground-colour, 50%);
       -webkit-border-radius: $height / 2; } }
   ol, ul {
