@@ -12,6 +12,12 @@ if (navigator.appVersion.indexOf("Mac") == -1) {
     site_title[i].className += " js-site-title-windows-hack";
   }
 }
+if (!!navigator.userAgent.match(/Trident\/7.0; rv 11/)) {
+  var post_metadata = document.getElementsByClassName("post-metadata");
+  for (var i = 0; i < post_metadata.length; i++) {
+    post_metadata[i].className += " js-metadata-ie11-hack";
+  }
+}
 var relative_dates = document.getElementsByClassName("js-relative-date");
 for (var i = 0; i < relative_dates.length; i++) {
   relative_dates[i].innerHTML =

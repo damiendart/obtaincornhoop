@@ -15,6 +15,12 @@
     background-color: #c0392b; }
   .js-background-1, .js-background-3, .js-background-5 {
     background-color: #34495e; }
+  // HACK: This hack compensates for the fact that Internet Explorer 11 adds a
+  // single-pixel-width gap between block elements styled with "border-radius"
+  // because it is Internet Explorer 11. For more information, see
+  // <http://stackoverflow.com/q/20051783>.
+  .js-metadata-ie11-hack {
+    margin-top: -1px; }
   // HACK: In browsers running on Windows, this hack adds a small bottom
   // margin to the site title, as without it the space between the site title
   // and site navigation is a little too small.
