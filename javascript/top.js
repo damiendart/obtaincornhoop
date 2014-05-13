@@ -5,8 +5,6 @@
 // please refer to the accompanying "LICENCE" file.
 
 // HACK: Prevent "SelectNav.js"-related FOUC.
-var date = new Date();
-document.documentElement.className += "js js-background-" +
-    date.getDay().toString();
+document.documentElement.className += "js";
 try{Typekit.load();}catch(e){}
 hljs.initHighlightingOnLoad();
