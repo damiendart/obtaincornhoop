@@ -27,7 +27,7 @@
   @media screen and (max-width: em($width, $base-font-size)) {
     margin: em($base-layout-unit / 2, $base-font-size) auto;
     width: 100%; }
-  /* [Any block-level element] */.main-content__block {
+  /* [Any block-level element] */ &__block {
     margin: em($base-layout-unit, $base-font-size) 0 0 0;
     @media screen and (max-width: em($width, $base-font-size)) {
       margin: em($base-layout-unit / 2, $base-font-size) 0 0 0;
@@ -38,7 +38,7 @@
   margin: 0;
   text-align: left;
   padding: 0;
-  /* li */.metadata-list__item {
+  /* li */ &__item {
     &:before {
       // Adjust font size to make icon glyphs align better with adjacent text.
       $font-size: $base-font-size * 0.75;
@@ -49,15 +49,16 @@
       line-height: em($base-line-height, $font-size);
       speak: none;
       width: em($base-line-height, $font-size); }
-    /* div */.metadata-list__item__text {
+    /* div */ &__text {
       font-style: italic;
       margin: em($base-line-height * -1, $base-font-size) 0
           0 em($base-layout-unit, $base-font-size); } }
-  @each $type in (("date", "\e023"), ("notes", "\e005"),
-      ("source", "\e087"), ("tags", "\e042")) {
-    /* li */.metadata-list__item--#{nth($type, 1)} {
-      &:before {
-        content: "#{nth($type, 2)}"; } } } }
+    @each $type in (("date", "\e023"), ("notes", "\e005"),
+        ("source", "\e087"), ("tags", "\e042")) {
+      // HACK: Using the ampersand here doesn't work properly.
+      /* li */ .metadata-list__item--#{nth($type, 1)} {
+        &:before {
+          content: "#{nth($type, 2)}"; } } } }
 
 /* ul */.navigation-list {
   list-style: none;
@@ -65,7 +66,7 @@
   margin: em($base-layout-unit / -2, $base-font-size) 0
       0 em($base-layout-unit / -2, $base-font-size);
   padding-left: 0;
-  /* li */.navigation-list__item {
+  /* li */ &__item {
     // Inline-block elements don't like whitespace between each other. See
     // <http://css-tricks.com/fighting-the-space-between-inline-block-elements/>
     // for more information.
@@ -115,9 +116,9 @@
   list-style: none;
   margin: 0;
   padding-left: 0;
-  /* li */.pagination__previous {
+  /* li */ &__previous {
     float: left; }
-  /* li */.pagination__next {
+  /* li */ &__next {
     float: right; } }
 
 /* section */.post-metadata {
@@ -213,8 +214,8 @@
   $foreground-colour: #ffffff;
   color: $foreground-colour;
   margin: em($base-layout-unit * 3, $base-font-size) auto;
-  /* div */.site-header__title { }
-  /* nav */.site-header__navigation { } }
+  /* div */ &__title { }
+  /* nav */ &__navigation { } }
 
 /* h1 */.site-title {
   $font-size: 60px;
@@ -228,7 +229,7 @@
     $line-height: $font-size;
     font-size: percentage($font-size / $base-font-size);
     line-height: em($line-height, $font-size); }
-  .site-title__link {
+  &__link {
     $background-colour: transparent;
     $foreground-colour: #ffffff;
     background-color: $background-colour;
@@ -242,7 +243,7 @@
   display: inline;
   margin: 0;
   padding: 0;
-  /* li */.tag-list__item {
+  /* li */ &__item {
     display: inline;
     &:before {
       content: ", "; }
