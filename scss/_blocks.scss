@@ -16,6 +16,7 @@
   font-weight: bold;
   padding: em($base-layout-unit / 2, $base-font-size)
       em($base-layout-unit, $base-font-size);
+  text-decoration: none;
   text-transform: uppercase; }
 
 // Don't use a "section" element because semantics blah blah blah. See
