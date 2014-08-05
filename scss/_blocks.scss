@@ -171,14 +171,17 @@
     padding: 0 0 0 em($base-line-height, $base-font-size); }
   iframe, img {
     border-style: none; // Remove border on linked images.
-    display: block;
-    max-width: 100%;
     // FIXME: We shouldn't be applying this to every image and "iframe".
-    @media screen and (max-width: em(500px, $base-font-size)) {
-      margin: 0 0 0 em($base-layout-unit * -1, $base-font-size);
-      @each $prefix in ("", "-moz-", "-webkit-") {
-        max-width: #{$prefix}calc(100% +
-            #{em($base-layout-unit * 2, $base-font-size)}); } } }
+    border-radius: em($base-layout-unit / 4, $base-font-size)
+        em($base-layout-unit / 4, $base-font-size) 0 0;
+    display: block;
+    margin: em($base-layout-unit * -1, $base-font-size) 0
+        0 em($base-layout-unit * -1, $base-font-size);
+    width: 100%; // Fallback.
+    // FIXME: We shouldn't be applying this to every image and "iframe".
+    @each $prefix in ("", "-moz-", "-webkit-") {
+      width: #{$prefix}calc(100% +
+          #{em($base-layout-unit * 2, $base-font-size)}); } }
   h1 {
     $font-size: 24px;
     $line-height: 36px;
