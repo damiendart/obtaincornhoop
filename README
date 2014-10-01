@@ -1,7 +1,8 @@
 obtaincornhoop
 ==============
 
-The theme for [my Tumblr-powered weblog][1], written in Haml and Sass.
+The old and retired theme for [my Tumblr-powered weblog][1], written in
+Haml and Sass with a touch of JavaScript.
 
 I'm publishing this project online mainly for my own benefit. Be
 prepared to gut and hack this thing if you want to use it for your own
@@ -12,8 +13,11 @@ me, and I'm prone to making drastic changes on a whim.
 Having said that, feel free to browse the code and pinch bits for your
 own theme or whatever. This theme uses the [GLYPHICONS][2] icon set,
 [HTML5 Shiv][3] and [SelectNav.js][4] JavaScript libraries, and the
-[Bourbon][5] Sass library. I can't offer much in the way of support,
-except for maybe saying "good luck".
+[Bourbon][5] Sass library. The theme also makes use of fonts from
+Typekit, including Overused Font of 2013 award-winner [Promixa
+Nova][6] and [Bello Pro][7].
+
+I can't offer much support, except for maybe saying "good luck".
 
 -- Damien
 
